@@ -1,6 +1,6 @@
 build/default/production/simulate_machine/simulate_machine.o:  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/simulate_machine/simulate_machine.c  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/simulate_machine/simulate_machine.h  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/button_matrix/button.h  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/lcd/lcd.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/simulate_machine/simulate_machine.c  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/button_matrix/button.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/lcd/lcd.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/simulate_machine/simulate_machine.h  \
 

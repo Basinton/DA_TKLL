@@ -1,4 +1,4 @@
 build/default/production/adc/adc.o:  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/adc/adc.c  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/adc/adc.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/adc/adc.c  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/adc/adc.h  \
 

@@ -1,4 +1,4 @@
 build/default/production/traffic_led/traffic_led.o:  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/traffic_led/traffic_led.c  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/traffic_led/traffic_led.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/traffic_led/traffic_led.c  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/traffic_led/traffic_led.h  \
 

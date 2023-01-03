@@ -24,60 +24,63 @@ unsigned char flagOfDataReceiveComplete = 0;
 unsigned char indexOfMachine = 0;
 unsigned char indexOfDataReceive = 0;
 unsigned char indexOfdataSend = 0;
-unsigned char numberOfDataReceive = 5;
+unsigned char numberOfDataReceive = 3;
 unsigned char dataReceive [50];
-unsigned char numberOfDataSend = 5;
+unsigned char numberOfDataSend = 3;
 unsigned char dataSend [50];
+unsigned char statusOfUart = 34;
 
-unsigned char tempCount = 0, TEMP_value = 0, pH_value = 0, FLOW_value = 0;
-unsigned char COD_value = 0, TSS_value = 0, NO3_value = 0, NH4_value = 0;
 unsigned int timeChangedataSend = 0;
-unsigned char isButtonMessage();
-unsigned char isButtonCall();
-unsigned char isButtonGPRS();
-unsigned char isButtonClear();
 
-void uart_isr_simulate_machine()
-{
+void uart_isr_simulate_machine() {
     unsigned char tempReceive;
     tempReceive = RCREG;
-    uart_putchar(tempReceive);
-    switch(statusReceive)
-    {
+    switch (statusReceive) {
         case INIT_RECEIVE:
+            //            statusOfUart = 0;
         case WAIT_HEADER_1:
-            if (tempReceive == 0xfe)
-            {
+            if (tempReceive == 0x21) {
+                statusOfUart = 0;
                 indexOfDataReceive = 0;
                 statusReceive = WAIT_HEADER_2;
             }
             break;
         case WAIT_HEADER_2:
-            if (tempReceive == 0xfe)
+            if (tempReceive == 0x21)
                 statusReceive = RECEIVE_DATA;
             else
                 statusReceive = WAIT_HEADER_1;
             break;
         case RECEIVE_DATA:
-            dataReceive [indexOfDataReceive] = tempReceive;
-            indexOfDataReceive ++;
+            dataReceive[indexOfDataReceive] = tempReceive;
+            indexOfDataReceive++;
             if (indexOfDataReceive >= numberOfDataReceive)
                 statusReceive = END_OF_RECEIVE_1;
-
             break;
         case END_OF_RECEIVE_1:
-            if (tempReceive == 0xff)
+            if (tempReceive == 0x23)
                 statusReceive = END_OF_RECEIVE_2;
             else
                 statusReceive = WAIT_HEADER_1;
             break;
         case END_OF_RECEIVE_2:
-            if (tempReceive == 0xff)
-            {
+            if (tempReceive == 0x23) {
                 flagOfDataReceiveComplete = 1;
+                if (dataReceive[0] == 0x52) {
+                    statusOfUart = 52;
+                } else if (dataReceive[0] == 0x47) {
+                    statusOfUart = 47;
+                } else if (dataReceive[0] == 0x59) {
+                    statusOfUart = 59;
+                } else if (dataReceive[0] == 0x53) {
+                    statusOfUart = 81;
+                } else if (dataReceive[0] == 0x41) {
+                    statusOfUart = 82;
+                } else if (dataReceive[0] != 0x52 && dataReceive[0] != 0x47 && dataReceive[0] != 0x59) {
+                    statusOfUart = 201;
+                }
                 statusReceive = INIT_RECEIVE;
-            }
-            else
+            } else
                 statusReceive = WAIT_HEADER_1;
             break;
         default:
@@ -86,20 +89,6 @@ void uart_isr_simulate_machine()
     }
 }
 
-void SimulatedataSend()
-{
-   
-}
-
-void DisplayDataReceive()
-{
-    if(flagOfDataReceiveComplete == 1)
-    {
-        //flagOfDataReceiveComplete = 0;
-        LcdPrintStringS(0,0,"                ");
-        for (i = 0; i<numberOfDataReceive;i++)
-            LcdPrintNumS(0,3*i,dataReceive[i]);
-        LcdPrintNumS(0,15,statusReceive);
-    }
+void SimulatedataSend() {
 
 }

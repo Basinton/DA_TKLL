@@ -1,5 +1,5 @@
 build/default/production/pwm/pwm.o:  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/pwm/pwm.c  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/pwm/pwm.h  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/adc/adc.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/pwm/pwm.c  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/pwm/pwm.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/adc/adc.h  \
 

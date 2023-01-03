@@ -9,8 +9,7 @@
 #define MAX_ROW			4
 
 extern unsigned int key_code[16];
-
-
+extern unsigned char buttonDelay;
 
 void init_key_matrix();
 void scan_key_matrix();
@@ -23,4 +22,8 @@ void init_key_matrix_new_board();
 void scan_key_matrix_new_board();
 
 unsigned char isButtonEnter(int index);
+unsigned char isConformHold();
+unsigned char isButtonESCHold();
+unsigned char isButtonIncrease();
+unsigned char isButtonDecrease();
 #endif

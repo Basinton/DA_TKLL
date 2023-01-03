@@ -14,24 +14,21 @@ void offAllLeds(void) {
 }
 
 void blinkLeds(void) {
-    offAllLeds();
-    control_traffic_led(~cur_status);
+    cur_status = ~cur_status;
+    control_traffic_led(cur_status);
 }
 
 void blinkReds(void){
-    
     cur_status = cur_status ^ 0x48;
     control_traffic_led(cur_status);
 }
 
 void blinkYellows(void){
-    offAllLeds();
     cur_status = cur_status ^ 0x24;
     control_traffic_led(cur_status);
 }
 
 void blinkGreens(void){
-    offAllLeds();
     cur_status = cur_status ^ 0x12;
     control_traffic_led(cur_status);
 }
@@ -99,5 +96,5 @@ void control_traffic_led(int signal) {
 void delay_ms_traffic(int value) {
     int i, j;
     for (i = 0; i < value; i++)
-        for (j = 0; j < 238; j++);
+        for (j = 0; j < 1; j++);
 }

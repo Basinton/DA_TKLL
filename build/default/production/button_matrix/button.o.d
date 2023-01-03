@@ -1,4 +1,4 @@
 build/default/production/button_matrix/button.o:  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/button_matrix/button.c  \
-	C:/Users/MyLinh/Documents/GitHub/-n-TKLL/button_matrix/button.h  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/button_matrix/button.c  \
+	C:/Hoc\ tap/DA\ TKLL/DA_TKLL/ProjectTKLL/button_matrix/button.h  \
 

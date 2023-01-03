@@ -13,53 +13,110 @@ void delay_ms(int value);
 
 // Den giao thong
 #define     INIT_SYSTEM         255
-#define     PHASE1              0
-#define     PHASE2              1
-#define     PHASE3              2
-#define     PHASE4              3
-#define     WAIT                4
+#define     INIT_TRAFFIC        1
+#define     PHASE1              2
+#define     PHASE2              3
+#define     PHASE3              4
+#define     PHASE4              5
+#define     WAIT_TRAFFIC        6
 
-#define     MAN_INIT            200
-#define     MAN_PHASE1          201
-#define     MAN_PHASE2          202
-#define     MAN_PHASE3          203
-#define     MAN_PHASE4          204
+#define     MAN_INIT            10
+#define     MAN_PHASE1          11
+#define     MAN_PHASE2          12
+#define     MAN_PHASE3          13
+#define     MAN_PHASE4          14
 
-#define     TUN_INIT            300
-#define     TUN_PHASE1          301
-#define     TUN_PHASE2          302
-#define     TUN_PHASE3          303
+#define     TUN_INIT            20
+#define     TUN_PHASE1          21
+#define     TUN_PHASE2          22
+#define     TUN_PHASE3          23
+
+#define     UART_INIT           30
+#define     UART_RED            31
+#define     UART_GREEN          32
+#define     UART_YELLOW         33
+#define     UART_WAIT           34
+#define     UART_CONFORM_RED        52
+#define     UART_CONFORM_GREEN      47
+#define     UART_CONFORM_YELLOW     59
+#define     UART_RED_COMPLETE       37
+#define     UART_GREEN_COMPLETE     38
+#define     UART_YELLOW_COMPLETE    39
+
+#define     UART_ERROR              200
+#define     INIT_UART_ERROR         201
+#define     UART_ERROR_YELLOW       202
+
+#define     WAIT_MENU           40
+#define     INIT_MENU           41
+
+#define     MENU_1              42
+#define     MENU_2              43
+#define     MENU_3              44
+#define     MENU_4              45
+
+#define     MENU_MAN_1          50
+#define     MENU_MAN_2          51
+#define     MENU_MAN_3          52
+#define     MENU_MAN_4          53
+
+#define     MENU_TUN_1          60
+#define     MENU_TUN_2          61
+#define     MENU_TUN_3          62
+#define     MENU_TUN_4          63
+#define     MENU_TUN_CONFORM    64
+#define     MENU_TUN_CONFORM_YES   65
+#define     MENU_TUN_CONFORM_NO    66
 
 #define     BASE_GREEN_TIME     3
 #define     BASE_YELLOW_TIME    2
 #define     BASE_RED_TIME       5
-#define     WAIT_TIME           10
+#define     WAIT_TIME           20
+#define     ERROR_WAIT_TIME     2
 
-unsigned char statusOfLight = INIT_SYSTEM;
+#define     PRE_STATE_RED       70
+#define     PRE_STATE_GREEN     71
+#define     PRE_STATE_YELLOW    72
+
+#define     SLOW_MODE           80
+#define     UART_SLOW           81
+#define     UART_AUTO           82
+
+unsigned char statusOfSystem = INIT_SYSTEM;
+unsigned char statusOfTraffic = INIT_TRAFFIC;
 unsigned char timeOfRed = BASE_RED_TIME;
 unsigned char timeOfGreen = BASE_GREEN_TIME;
-unsigned char timeOfYellow = BASE_YELLOW_TIME;
-unsigned char timeOf7Seg1 = BASE_RED_TIME;
-unsigned char timeOf7Seg2 = BASE_GREEN_TIME;
+unsigned char timeOfYellow = 0;
+unsigned char timeOf7Seg1 = 0;
+unsigned char timeOf7Seg2 = 0;
+unsigned char globalTimeOfGreen = BASE_GREEN_TIME;
+unsigned char globalTimeOfRed = BASE_RED_TIME;
+unsigned char globalTimeOfYellow = BASE_YELLOW_TIME;
 
 unsigned char timeCounter = 0;
 unsigned char trafficCounter = 0;
 unsigned char secCounter = 20;
+unsigned char secTrafficCounter = 20;
+unsigned char secMenuCounter = 20;
 unsigned char waitCounter = 0;
 unsigned char tempTrafficCounter = 0;
+unsigned char preTunState = PRE_STATE_RED;
+unsigned char prePress = 0;
+unsigned char uartPrePress = 0;
+unsigned char uartPrePress1 = 0;
+unsigned char tunPrePress = 0;
 
 void AppTrafficLight();
 void fsm_automatic();
 void fsm_manual();
 void fsm_tuning();
+void menuRun();
 void UartDataReceiveProcess();
-void UartDataReceiveProcess_ElectronicDeviceControl();
 ////////////////////////////////////////////////////////////////////
 //Hien thuc cac chuong trinh con, ham, module, function duoi cho nay
 ////////////////////////////////////////////////////////////////////
 
 void main(void) {
-    unsigned int k = 0;
     init_system();
     delay_ms(1000);
     while (1) {
@@ -69,14 +126,11 @@ void main(void) {
             AppTrafficLight();
             fsm_manual();
             fsm_tuning();
-
+            menuRun();
+            UartDataReceiveProcess();
             scan_key_matrix_with_uart(); // 8 button
-            //            DisplayDataReceive();
-            //            UartDataReceiveProcess();
-
+            DisplayLcdScreen();
         }
-
-
     }
 }
 // Hien thuc cac module co ban cua chuong trinh
@@ -92,14 +146,17 @@ void init_output(void) {
     PORTD_OUT = 0x00;
     TRISB = 0x00;
     PORTB = 0x00;
-
 }
 
 void init_system(void) {
-    statusOfLight = INIT_SYSTEM;
+    statusOfSystem = INIT_SYSTEM;
+    statusOfTraffic = INIT_TRAFFIC;
+    preTunState = PRE_STATE_RED;
+    indexOfDataReceive = 0;
     init_output();
     offAllLeds();
-    control_led(10, 10);
+    control_led1(10, 10);
+    control_led2(10, 10);
     lcd_init();
     init_key_matrix_with_uart();
     init_interrupt();
@@ -112,51 +169,52 @@ void init_system(void) {
 }
 
 void AppTrafficLight() {
-    switch (statusOfLight) {
-        case INIT_SYSTEM: //RED1 GREEN2
+    switch (statusOfTraffic) {
+        case WAIT_TRAFFIC:
+            break;
+        case INIT_TRAFFIC: //RED1 GREEN2
+            timeOfGreen = globalTimeOfGreen;
+            timeOfRed = globalTimeOfRed;
+            timeOfYellow = globalTimeOfYellow;
+            LcdClearS();
             trafficCounter = timeOfGreen;
             timeOf7Seg1 = timeOfRed;
             timeOf7Seg2 = timeOfGreen;
+            secTrafficCounter = 20;
             setRed1();
             setGreen2();
-
-            statusOfLight = PHASE1;
+            statusOfTraffic = PHASE1;
             break;
         case PHASE1: //RED1 YELLOW2 
-            display_led(timeOf7Seg1);
-            if (secCounter <= 0) {
+            display_led1(timeOf7Seg1);
+            display_led2(timeOf7Seg2);
+            if (secTrafficCounter <= 0) {
                 timeOf7Seg1--;
                 timeOf7Seg2--;
-                secCounter = 20;
+                secTrafficCounter = 20;
                 trafficCounter--;
             }
-            secCounter--;
+            secTrafficCounter--;
 
             if (trafficCounter <= 0) {
                 setYellow2();
                 trafficCounter = timeOfYellow;
+                timeOf7Seg1 = timeOfRed - timeOfGreen;
                 timeOf7Seg2 = timeOfYellow;
-                statusOfLight = PHASE2;
-            }
-
-            if (isButtonEnter(0) == 1) {
-                offAllLeds();
-                setRed1();
-                setGreen2();
-                waitCounter = WAIT_TIME;
-                statusOfLight = MAN_INIT;
+                statusOfTraffic = PHASE2;
             }
 
             break;
         case PHASE2: //GREEN1 RED2
-            display_led(timeOf7Seg1);
-            if (secCounter <= 0) {
+            display_led1(timeOf7Seg1);
+            display_led2(timeOf7Seg2);
+            if (secTrafficCounter <= 0) {
                 timeOf7Seg1--;
                 timeOf7Seg2--;
-                secCounter = 20;
+                secTrafficCounter = 20;
                 trafficCounter--;
             }
-            secCounter--;
+            secTrafficCounter--;
 
             if (trafficCounter <= 0) {
                 trafficCounter = timeOfGreen;
@@ -164,89 +222,65 @@ void AppTrafficLight() {
                 setRed2();
                 timeOf7Seg1 = timeOfGreen;
                 timeOf7Seg2 = timeOfRed;
-                statusOfLight = PHASE3;
-            }
-
-            if (isButtonEnter(0) == 1) {
-                offAllLeds();
-                setRed1();
-                setGreen2();
-                waitCounter = WAIT_TIME;
-                statusOfLight = MAN_INIT;
+                statusOfTraffic = PHASE3;
             }
 
             break;
         case PHASE3: //YELLOW1 RED2
-            display_led(timeOf7Seg1);
-            if (secCounter <= 0) {
+            display_led1(timeOf7Seg1);
+            display_led2(timeOf7Seg2);
+            if (secTrafficCounter <= 0) {
                 timeOf7Seg1--;
                 timeOf7Seg2--;
-                secCounter = 20;
+                secTrafficCounter = 20;
                 trafficCounter--;
             }
-            secCounter--;
+            secTrafficCounter--;
 
             if (trafficCounter <= 0) {
                 trafficCounter = timeOfYellow;
-                SetTimer3_ms(50);
                 setYellow1();
                 timeOf7Seg1 = timeOfYellow;
-                statusOfLight = PHASE4;
+                timeOf7Seg2 = timeOfRed - timeOfGreen;
+                statusOfTraffic = PHASE4;
             }
-
-            if (isButtonEnter(0) == 1) {
-                offAllLeds();
-                setRed1();
-                setGreen2();
-                waitCounter = WAIT_TIME;
-                statusOfLight = MAN_INIT;
-            }
-
             break;
         case PHASE4: //RED1 GREEN2
-            display_led(timeOf7Seg1);
-            if (secCounter <= 0) {
+            display_led1(timeOf7Seg1);
+            display_led2(timeOf7Seg2);
+            if (secTrafficCounter <= 0) {
                 timeOf7Seg1--;
                 timeOf7Seg2--;
-                secCounter = 20;
+                secTrafficCounter = 20;
                 trafficCounter--;
             }
-            secCounter--;
+            secTrafficCounter--;
 
             if (trafficCounter <= 0) {
-                trafficCounter = timeOfGreen;
-                setRed1();
-                setGreen2();
-                timeOf7Seg1 = timeOfRed;
-                timeOf7Seg2 = timeOfGreen;
-                statusOfLight = PHASE1;
+                statusOfTraffic = INIT_TRAFFIC;
             }
-
-            if (isButtonEnter(0) == 1) {
-                offAllLeds();
-                setRed1();
-                setGreen2();
-                waitCounter = WAIT_TIME;
-                statusOfLight = MAN_INIT;
-            }
-
             break;
         default:
-            //            statusOfLight = INIT_SYSTEM;
             break;
     }
 }
 
 void fsm_manual() {
-    switch (statusOfLight) {
+    switch (statusOfSystem) {
         case MAN_INIT:
-            statusOfLight = MAN_PHASE1;
+            LcdClearS();
+            statusOfTraffic = WAIT_TRAFFIC;
+            statusOfSystem = MAN_PHASE1;
             setRed1();
             setGreen2();
 
             break;
         case MAN_PHASE1:
-            display_led(waitCounter);
+            statusOfTraffic = WAIT_TRAFFIC;
+            LcdPrintStringS(0, 0, "PHASE 1: RED");
+            LcdPrintStringS(1, 0, "PHASE 2: GREEN");
+            display_led1(100);
+            display_led2(100);
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -254,23 +288,40 @@ void fsm_manual() {
             secCounter--;
 
             if (waitCounter <= 0) {
-                statusOfLight = INIT_SYSTEM;
+                statusOfTraffic = INIT_TRAFFIC;
+                statusOfSystem = INIT_SYSTEM;
             }
 
             if (isButtonEnter(1) == 1) {
-                statusOfLight = MAN_PHASE2;
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE4;
+                setYellow1();
+                setRed2();
+                LcdClearS();
+                waitCounter = WAIT_TIME;
+            }
+            if (isButtonEnter(2) == 1) {
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE2;
                 setRed1();
                 setYellow2();
+                LcdClearS();
                 waitCounter = WAIT_TIME;
             }
 
             if (isButtonEnter(0) == 1) {
-                statusOfLight = TUN_INIT;
+                prePress = 1;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_1;
             }
             break;
 
         case MAN_PHASE2:
-            display_led(waitCounter);
+            statusOfTraffic = WAIT_TRAFFIC;
+            LcdPrintStringS(0, 0, "PHASE 1: RED");
+            LcdPrintStringS(1, 0, "PHASE 2: YELLOW");
+            display_led1(100);
+            display_led2(100);
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -278,23 +329,43 @@ void fsm_manual() {
             secCounter--;
 
             if (waitCounter <= 0) {
-                statusOfLight = INIT_SYSTEM;
+                statusOfTraffic = PHASE1;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
             }
 
             if (isButtonEnter(1) == 1) {
-                statusOfLight = MAN_PHASE3;
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE1;
+                setRed1();
+                setGreen2();
+                LcdClearS();
+                waitCounter = WAIT_TIME;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE3;
                 setGreen1();
                 setRed2();
+                LcdClearS();
                 waitCounter = WAIT_TIME;
             }
 
             if (isButtonEnter(0) == 1) {
-                statusOfLight = TUN_INIT;
+                prePress = 1;
+                LcdClearS();
+                trafficCounter = 0;
+                statusOfSystem = MENU_MAN_2;
             }
             break;
 
         case MAN_PHASE3:
-            display_led(waitCounter);
+            statusOfTraffic = WAIT_TRAFFIC;
+            LcdPrintStringS(0, 0, "PHASE 1: GREEN");
+            LcdPrintStringS(1, 0, "PHASE 2: RED");
+            display_led1(100);
+            display_led2(100);
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -302,23 +373,42 @@ void fsm_manual() {
             secCounter--;
 
             if (waitCounter <= 0) {
-                statusOfLight = INIT_SYSTEM;
+                statusOfTraffic = PHASE2;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
             }
 
             if (isButtonEnter(1) == 1) {
-                statusOfLight = MAN_PHASE4;
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE2;
+                setRed1();
+                setYellow2();
+                LcdClearS();
+                waitCounter = WAIT_TIME;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE4;
                 setYellow1();
                 setRed2();
+                LcdClearS();
                 waitCounter = WAIT_TIME;
             }
 
             if (isButtonEnter(0) == 1) {
-                statusOfLight = TUN_INIT;
+                prePress = 1;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_3;
             }
             break;
 
         case MAN_PHASE4:
-            display_led(waitCounter);
+            statusOfTraffic = WAIT_TRAFFIC;
+            LcdPrintStringS(0, 0, "PHASE 1: YELLOW");
+            LcdPrintStringS(1, 0, "PHASE 2: RED");
+            display_led1(100);
+            display_led2(100);
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -326,138 +416,947 @@ void fsm_manual() {
             secCounter--;
 
             if (waitCounter <= 0) {
-                statusOfLight = INIT_SYSTEM;
+                statusOfTraffic = PHASE3;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
             }
 
             if (isButtonEnter(1) == 1) {
-                statusOfLight = MAN_PHASE1;
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE3;
+                setGreen1();
+                setRed2();
+                LcdClearS();
+                waitCounter = WAIT_TIME;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                secCounter = 20;
+                statusOfSystem = MAN_PHASE1;
                 setRed1();
                 setGreen2();
+                LcdClearS();
                 waitCounter = WAIT_TIME;
             }
 
             if (isButtonEnter(0) == 1) {
-                statusOfLight = TUN_INIT;
+                prePress = 1;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_4;
             }
             break;
-
         default:
             break;
     }
 }
 
 void fsm_tuning() {
-    switch (statusOfLight) {
+    switch (statusOfSystem) {
         case TUN_INIT:
-            statusOfLight = TUN_PHASE1;
-            offAllLeds();
-            blinkReds();
+            LcdClearS();
+            waitCounter = WAIT_TIME;
+            statusOfSystem = TUN_PHASE1;
+            tempTrafficCounter = timeOfRed;
             break;
 
         case TUN_PHASE1:
-            display_led(timeOfRed);
+            LcdClearS();
+            LcdPrintStringS(0, 0, "RED TIME:");
+            LcdPrintNumS(0, 10, tempTrafficCounter);
+            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
 
-            if (isButtonEnter(2) == 1) {
-                timeOfRed++;
-
-                if (timeOfRed > 99) {
-                    timeOfRed = 1;
-                }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
             }
 
+            if (isButtonIncrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter++;
+
+                if (tempTrafficCounter > 99) {
+                    tempTrafficCounter = 1;
+                }
+            }
+            if (isButtonDecrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter--;
+
+                if (tempTrafficCounter < 1) {
+                    tempTrafficCounter = 99;
+                }
+            }
             if (isButtonEnter(3) == 1) {
-                timeOfRed--;
-
-                if (timeOfRed < 1) {
-                    timeOfRed = 99;
-                }
+                waitCounter = WAIT_TIME;
+                preTunState = PRE_STATE_RED;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_YES;
             }
-
-            if (isButtonEnter(1) == 1) {
-                statusOfLight = TUN_PHASE2;
-                blinkGreens();
-            }
-
             if (isButtonEnter(0) == 1) {
-                statusOfLight = INIT_SYSTEM;
-
+                tunPrePress = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
             }
-
             break;
-
         case TUN_PHASE2:
-            display_led(timeOfGreen);
+            LcdClearS();
+            LcdPrintStringS(0, 0, "GREEN TIME:");
+            LcdPrintNumS(0, 12, tempTrafficCounter);
+            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
 
-            if (isButtonEnter(2) == 1) {
-                timeOfGreen++;
-
-                if (timeOfGreen > 99) {
-                    timeOfGreen = 1;
-                }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
             }
 
+
+            if (isButtonIncrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter++;
+
+                if (tempTrafficCounter > 99) {
+                    tempTrafficCounter = 1;
+                }
+            }
+            if (isButtonDecrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter--;
+
+                if (tempTrafficCounter < 1) {
+                    tempTrafficCounter = 99;
+                }
+            }
             if (isButtonEnter(3) == 1) {
-                timeOfGreen--;
-
-                if (timeOfGreen < 1) {
-                    timeOfGreen = 99;
-                }
+                waitCounter = WAIT_TIME;
+                preTunState = PRE_STATE_GREEN;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_YES;
             }
-
-            if (isButtonEnter(1) == 1) {
-                statusOfLight = TUN_PHASE3;
-                blinkYellows();
-            }
-
             if (isButtonEnter(0) == 1) {
-                statusOfLight = INIT_SYSTEM;
-
+                tunPrePress = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_2;
             }
-
             break;
 
         case TUN_PHASE3:
-            display_led(timeOfYellow);
+            LcdClearS();
+            LcdPrintStringS(0, 0, "YELLOW TIME:");
+            LcdPrintNumS(0, 13, tempTrafficCounter);
+            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
+
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+
+            if (isButtonIncrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter++;
+
+                if (tempTrafficCounter > 99) {
+                    tempTrafficCounter = 1;
+                }
+            }
+            if (isButtonDecrease() == 1) {
+                waitCounter = WAIT_TIME;
+                tempTrafficCounter--;
+
+                if (tempTrafficCounter < 1) {
+                    tempTrafficCounter = 99;
+                }
+            }
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                preTunState = PRE_STATE_YELLOW;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_YES;
+            }
+            if (isButtonEnter(0) == 1) {
+                tunPrePress = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_3;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+void menuRun() {
+    switch (statusOfSystem) {
+        case INIT_SYSTEM:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+
+            LcdPrintStringS(0, 0, "SYSTEM'S WORKING");
+            LcdPrintStringS(1, 0, "Press 1 for menu");
+
+            if (isButtonEnter(0) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_MENU;
+            }
+            break;
+        case INIT_MENU:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MENU: 1.AUTO");
+            LcdPrintStringS(1, 6, "2.MANUAL");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_3;
+            }
 
             if (isButtonEnter(2) == 1) {
-                timeOfYellow++;
-
-                if (timeOfYellow > 99) {
-                    timeOfYellow = 1;
-                }
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
             }
 
             if (isButtonEnter(3) == 1) {
-                timeOfYellow--;
-
-                if (timeOfYellow < 1) {
-                    timeOfYellow = 99;
-                }
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+                statusOfTraffic = INIT_TRAFFIC;
             }
+            break;
+        case MENU_1:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MENU: 1.AUTO");
+            LcdPrintStringS(1, 6, "2.MANUAL");
+            LcdPrintStringS(1, 15, "<");
 
             if (isButtonEnter(1) == 1) {
-                statusOfLight = TUN_INIT;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_MENU;
             }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_2;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_1;
+            }
+
 
             if (isButtonEnter(0) == 1) {
-                statusOfLight = INIT_SYSTEM;
-
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
             }
-
             break;
 
+        case MENU_MAN_1:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfTraffic = INIT_TRAFFIC;
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MANUAL: 1. R-G");
+            LcdPrintStringS(1, 8, "2. R-Y");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_4;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_2;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MAN_INIT;
+            }
+            if (isButtonEnter(0) == 1 && prePress == 0) {
+                statusOfTraffic = INIT_TRAFFIC;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
+            } else {
+                prePress = 0;
+            }
+            break;
+        case MENU_MAN_2:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfTraffic = PHASE1;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MANUAL: 1. R-G");
+            LcdPrintStringS(1, 8, "2. R-Y");
+            LcdPrintStringS(1, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_1;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_3;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                setRed1();
+                setYellow2();
+                LcdClearS();
+                statusOfSystem = MAN_PHASE2;
+            }
+            if (isButtonEnter(0) == 1 && prePress == 0) {
+                statusOfTraffic = PHASE1;
+                trafficCounter = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
+            } else {
+                prePress = 0;
+            }
+            break;
+
+        case MENU_MAN_3:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfTraffic = PHASE2;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MANUAL: 3. G-R");
+            LcdPrintStringS(1, 8, "4. Y-R");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_2;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_4;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                setGreen1();
+                setRed2();
+                LcdClearS();
+                statusOfSystem = MAN_PHASE3;
+            }
+            if (isButtonEnter(0) == 1 && prePress == 0) {
+                statusOfTraffic = PHASE2;
+                trafficCounter = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
+            } else {
+                prePress = 0;
+            }
+            break;
+
+        case MENU_MAN_4:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfTraffic = PHASE3;
+                trafficCounter = 0;
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MANUAL: 3. G-R");
+            LcdPrintStringS(1, 8, "4. Y-R");
+            LcdPrintStringS(1, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_3;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_MAN_1;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                setYellow1();
+                setRed2();
+                LcdClearS();
+                statusOfSystem = MAN_PHASE4;
+            }
+            if (isButtonEnter(0) == 1 && prePress == 0) {
+                statusOfTraffic = PHASE3;
+                trafficCounter = 0;
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
+            } else {
+                prePress = 0;
+            }
+            break;
+
+        case MENU_2:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MENU: 3.TUNNING");
+            LcdPrintStringS(1, 6, "4.SLOW");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_1;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_3;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+            if (isButtonEnter(0) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+            }
+            break;
+
+        case MENU_TUN_1:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "TUN: 1.RED");
+            LcdPrintStringS(1, 5, "2.GREEN");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_3;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_2;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                preTunState = PRE_STATE_RED;
+                LcdClearS();
+                statusOfSystem = TUN_INIT;
+            }
+            if (isButtonEnter(0) == 1 && tunPrePress == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_2;
+            } else {
+                tunPrePress = 1;
+            }
+            break;
+        case MENU_TUN_2:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "TUN: 1.RED");
+            LcdPrintStringS(1, 5, "2.GREEN");
+            LcdPrintStringS(1, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_3;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                tempTrafficCounter = timeOfGreen;
+                statusOfSystem = TUN_PHASE2;
+            }
+            if (isButtonEnter(0) == 1 && tunPrePress == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_2;
+            } else {
+                tunPrePress = 1;
+            }
+            break;
+        case MENU_TUN_3:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "TUN: 3.YELLOW");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_2;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                tempTrafficCounter = timeOfYellow;
+                statusOfSystem = TUN_PHASE3;
+            }
+            if (isButtonEnter(0) == 1 && tunPrePress == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_2;
+            } else {
+                tunPrePress = 1;
+            }
+            break;
+        case MENU_TUN_CONFORM_YES:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "Conform?   YES");
+            LcdPrintStringS(1, 11, "NO");
+            LcdPrintStringS(0, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_NO;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_NO;
+            }
+
+            if ((isConformHold() == 1) && (preTunState == PRE_STATE_RED)) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                globalTimeOfRed = tempTrafficCounter;
+                statusOfSystem = MENU_TUN_1;
+            }
+
+            if ((isConformHold() == 1) && (preTunState == PRE_STATE_GREEN)) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                globalTimeOfGreen = tempTrafficCounter;
+                statusOfSystem = MENU_TUN_2;
+            }
+
+            if ((isConformHold() == 1) && (preTunState == PRE_STATE_YELLOW)) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                globalTimeOfYellow = tempTrafficCounter;
+                statusOfSystem = MENU_TUN_3;
+            }
+
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_RED) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_GREEN) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_2;
+            }
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_YELLOW) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_3;
+            }
+            break;
+        case MENU_TUN_CONFORM_NO:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "Conform?   YES");
+            LcdPrintStringS(1, 11, "NO");
+            LcdPrintStringS(1, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_YES;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_CONFORM_YES;
+            }
+
+            if (isConformHold() == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_RED) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_1;
+            }
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_GREEN) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_2;
+            }
+            if (isButtonEnter(0) == 1 && preTunState == PRE_STATE_YELLOW) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_TUN_3;
+            }
+            break;
+        case MENU_3:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            if (waitCounter <= 0) {
+                statusOfSystem = INIT_SYSTEM;
+            }
+            secCounter--;
+            LcdPrintStringS(0, 0, "MENU: 3.TUNNING");
+            LcdPrintStringS(1, 6, "4.SLOW");
+            LcdPrintStringS(1, 15, "<");
+
+            if (isButtonEnter(1) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_2;
+            }
+
+            if (isButtonEnter(2) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_MENU;
+            }
+
+            if (isButtonEnter(3) == 1) {
+                offAllLeds();
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = SLOW_MODE;
+                statusOfTraffic = WAIT_TRAFFIC;
+            }
+            if (isButtonEnter(0) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+            }
+            break;
+        case SLOW_MODE:
+            if (secCounter <= 0) {
+                blinkYellows();
+                secCounter = 20;
+            }
+            secCounter--;
+
+            display_led1(100);
+            display_led2(100);
+            LcdPrintStringS(0, 0, "ENTER SLOW MODE");
+            LcdPrintStringS(1, 0, "Press 1 for menu");
+            if (isButtonEnter(0) == 1) {
+                waitCounter = WAIT_TIME;
+                LcdClearS();
+                statusOfSystem = MENU_3;
+                statusOfTraffic = INIT_TRAFFIC;
+            }
+            break;
+
+        case UART_RED_COMPLETE:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
+
+            if (waitCounter <= 0) {
+                statusOfUart = UART_WAIT;
+                statusOfSystem = INIT_SYSTEM;
+            }
+            LcdPrintStringS(0, 0, "Data received!");
+            LcdPrintStringS(1, 0, "Red time:");
+            LcdPrintNumS(1, 10, globalTimeOfRed);
+
+            if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
+                statusOfUart = UART_WAIT;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+            } else {
+                uartPrePress1 = 1;
+            }
+            break;
+        case UART_GREEN_COMPLETE:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
+            if (waitCounter <= 0) {
+                statusOfUart = UART_WAIT;
+                statusOfSystem = INIT_SYSTEM;
+            }
+
+            LcdPrintStringS(0, 0, "Data received!");
+            LcdPrintStringS(1, 0, "Green time: ");
+            LcdPrintNumS(1, 12, globalTimeOfGreen);
+
+            if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
+                statusOfUart = UART_WAIT;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+            } else {
+                uartPrePress1 = 1;
+            }
+            break;
+        case UART_YELLOW_COMPLETE:
+            if (secCounter <= 0) {
+                secCounter = 20;
+                waitCounter--;
+            }
+            secCounter--;
+            if (waitCounter <= 0) {
+                statusOfUart = UART_WAIT;
+                statusOfSystem = INIT_SYSTEM;
+            }
+
+            LcdPrintStringS(0, 0, "Data received!");
+            LcdPrintStringS(1, 0, "Yellow time: ");
+            LcdPrintNumS(1, 13, globalTimeOfYellow);
+
+            if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
+                statusOfUart = UART_WAIT;
+                LcdClearS();
+                statusOfSystem = INIT_SYSTEM;
+            } else {
+                uartPrePress1 = 1;
+            }
+            break;
         default:
             break;
     }
 }
 
 void UartDataReceiveProcess() {
-    if (flagOfDataReceiveComplete == 1) {
-        flagOfDataReceiveComplete = 0;
-        if (dataReceive[4] == 0) {
-            timeOfGreen = dataReceive[0];
-            timeOfYellow = dataReceive[1];
-        }
+    switch (statusOfUart) {
+        case UART_WAIT:
+            break;
+        case UART_CONFORM_RED:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                if (dataReceive[0] == 'R') {
+                    globalTimeOfRed = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                    LcdClearS();
+                    waitCounter = 2;
+                    statusOfSystem = UART_RED_COMPLETE;
+                    statusOfUart = UART_WAIT;
+                    UartSendString("Data received successfully! \r\n");
+                    UartSendString("  New RED time is: ");
+                    UartSendNum(globalTimeOfRed);
+                    UartSendString(" seconds. \r\n");
+                    UartSendString("\r\n");
+                }
+            }
+            break;
+        case UART_CONFORM_GREEN:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                if (dataReceive[0] == 'G') {
+                    globalTimeOfGreen = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                    waitCounter = 2;
+                    LcdClearS();
+                    statusOfSystem = UART_GREEN_COMPLETE;
+                    statusOfUart = UART_WAIT;
+                    UartSendString("Data received successfully! \r\n");
+                    UartSendString("  New GREEN time is: ");
+                    UartSendNum(globalTimeOfGreen);
+                    UartSendString(" seconds. \r\n");
+                    UartSendString("\r\n");
+                }
+            }
+            break;
+        case UART_CONFORM_YELLOW:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                if (dataReceive[0] == 'Y') {
+                    globalTimeOfYellow = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                    waitCounter = 2;
+                    LcdClearS();
+                    statusOfSystem = UART_YELLOW_COMPLETE;
+                    statusOfUart = UART_WAIT;
+                    UartSendString("Data received successfully! \r\n");
+                    UartSendString("  New YELLOW time is: ");
+                    UartSendNum(globalTimeOfYellow);
+                    UartSendString(" seconds. \r\n");
+                    UartSendString("\r\n");
+                }
+            }
+            break;
+        case UART_SLOW:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                if (dataReceive[0] == 'S' && dataReceive[1] == 'L' && dataReceive[2] == 'O') {
+                    offAllLeds();
+                    waitCounter = WAIT_TIME;
+                    LcdClearS();
+                    statusOfSystem = SLOW_MODE;
+                    statusOfUart = UART_WAIT;
+                    statusOfTraffic = WAIT_TRAFFIC;
+                    UartSendString("Data received successfully! \r\n");
+                    UartSendString("  Slow mode activated!");
+                    UartSendString("\r\n");
+                }
+            }
+            break;
+        case UART_AUTO:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                if (dataReceive[0] == 'A' && dataReceive[1] == 'T' && dataReceive[2] == 'O') {
+                    waitCounter = WAIT_TIME;
+                    LcdClearS();
+                    statusOfSystem = INIT_SYSTEM;
+                    statusOfUart = UART_WAIT;
+                    statusOfTraffic = INIT_TRAFFIC;
+                    UartSendString("Data received successfully! \r\n");
+                    UartSendString("  Automatic mode activated!");
+                    UartSendString("\r\n");
+                }
+            }
+            break;
+        case INIT_UART_ERROR:
+            statusOfUart = UART_ERROR;
+            break;
+        case UART_ERROR:
+            if (flagOfDataReceiveComplete == 1) {
+                flagOfDataReceiveComplete = 0;
+                UartSendString("Syntax error! Please try again. \r\n");
+                UartSendString("\r\n");
+            }
+            break;
+        default:
+            break;
     }
-    LcdPrintNumS(0, 15, statusReceive);
 }
