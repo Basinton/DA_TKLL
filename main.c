@@ -86,12 +86,15 @@ unsigned char statusOfSystem = INIT_SYSTEM;
 unsigned char statusOfTraffic = INIT_TRAFFIC;
 unsigned char timeOfRed = BASE_RED_TIME;
 unsigned char timeOfGreen = BASE_GREEN_TIME;
-unsigned char timeOfYellow = 0;
+unsigned char timeOfYellow = BASE_YELLOW_TIME;
 unsigned char timeOf7Seg1 = 0;
 unsigned char timeOf7Seg2 = 0;
 unsigned char globalTimeOfGreen = BASE_GREEN_TIME;
 unsigned char globalTimeOfRed = BASE_RED_TIME;
 unsigned char globalTimeOfYellow = BASE_YELLOW_TIME;
+unsigned char uartGlobalTimeOfGreen = BASE_GREEN_TIME;
+unsigned char uartGlobalTimeOfRed = BASE_RED_TIME;
+unsigned char uartGlobalTimeOfYellow = BASE_YELLOW_TIME;
 
 unsigned char timeCounter = 0;
 unsigned char trafficCounter = 0;
@@ -105,6 +108,12 @@ unsigned char prePress = 0;
 unsigned char uartPrePress = 0;
 unsigned char uartPrePress1 = 0;
 unsigned char tunPrePress = 0;
+unsigned char redFlag = 0;
+unsigned char greenFlag = 0;
+unsigned char yellowFlag = 0;
+unsigned char uartRedFlag = 0;
+unsigned char uartGreenFlag = 0;
+unsigned char uartYellowFlag = 0;
 
 void AppTrafficLight();
 void fsm_automatic();
@@ -173,9 +182,22 @@ void AppTrafficLight() {
         case WAIT_TRAFFIC:
             break;
         case INIT_TRAFFIC: //RED1 GREEN2
-            timeOfGreen = globalTimeOfGreen;
-            timeOfRed = globalTimeOfRed;
-            timeOfYellow = globalTimeOfYellow;
+            if (redFlag == 1 && greenFlag == 1 && yellowFlag == 1) {
+                redFlag = 0;
+                greenFlag = 0;
+                yellowFlag = 0;
+                timeOfGreen = globalTimeOfGreen;
+                timeOfRed = globalTimeOfRed;
+                timeOfYellow = globalTimeOfYellow;
+            }
+            if (uartRedFlag == 1 && uartGreenFlag == 1 && uartYellowFlag == 1) {
+                uartRedFlag = 0;
+                uartGreenFlag = 0;
+                uartYellowFlag = 0;
+                timeOfGreen = uartGlobalTimeOfGreen;
+                timeOfRed = uartGlobalTimeOfRed;
+                timeOfYellow = uartGlobalTimeOfYellow;
+            }
             LcdClearS();
             trafficCounter = timeOfGreen;
             timeOf7Seg1 = timeOfRed;
@@ -259,6 +281,16 @@ void AppTrafficLight() {
             if (trafficCounter <= 0) {
                 statusOfTraffic = INIT_TRAFFIC;
             }
+            break;
+        case SLOW_MODE:
+            if (secTrafficCounter <= 0) {
+                blinkYellows();
+                secTrafficCounter = 20;
+            }
+            secTrafficCounter--;
+
+            display_led1(100);
+            display_led2(100);
             break;
         default:
             break;
@@ -463,7 +495,7 @@ void fsm_tuning() {
             LcdClearS();
             LcdPrintStringS(0, 0, "RED TIME:");
             LcdPrintNumS(0, 10, tempTrafficCounter);
-            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            LcdPrintStringS(1, 0, "Submit? Press A!");
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -507,7 +539,7 @@ void fsm_tuning() {
             LcdClearS();
             LcdPrintStringS(0, 0, "GREEN TIME:");
             LcdPrintNumS(0, 12, tempTrafficCounter);
-            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            LcdPrintStringS(1, 0, "Submit? Press A!");
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -553,7 +585,7 @@ void fsm_tuning() {
             LcdClearS();
             LcdPrintStringS(0, 0, "YELLOW TIME:");
             LcdPrintNumS(0, 13, tempTrafficCounter);
-            LcdPrintStringS(1, 0, "Submit? Rress A!");
+            LcdPrintStringS(1, 0, "Submit? Press A!");
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -1046,6 +1078,7 @@ void menuRun() {
             }
 
             if ((isConformHold() == 1) && (preTunState == PRE_STATE_RED)) {
+                redFlag = 1;
                 waitCounter = WAIT_TIME;
                 LcdClearS();
                 globalTimeOfRed = tempTrafficCounter;
@@ -1053,6 +1086,7 @@ void menuRun() {
             }
 
             if ((isConformHold() == 1) && (preTunState == PRE_STATE_GREEN)) {
+                greenFlag = 1;
                 waitCounter = WAIT_TIME;
                 LcdClearS();
                 globalTimeOfGreen = tempTrafficCounter;
@@ -1060,6 +1094,7 @@ void menuRun() {
             }
 
             if ((isConformHold() == 1) && (preTunState == PRE_STATE_YELLOW)) {
+                yellowFlag = 1;
                 waitCounter = WAIT_TIME;
                 LcdClearS();
                 globalTimeOfYellow = tempTrafficCounter;
@@ -1159,7 +1194,7 @@ void menuRun() {
                 waitCounter = WAIT_TIME;
                 LcdClearS();
                 statusOfSystem = SLOW_MODE;
-                statusOfTraffic = WAIT_TRAFFIC;
+                statusOfTraffic = SLOW_MODE;
             }
             if (isButtonEnter(0) == 1) {
                 waitCounter = WAIT_TIME;
@@ -1168,25 +1203,18 @@ void menuRun() {
             }
             break;
         case SLOW_MODE:
-            if (secCounter <= 0) {
-                blinkYellows();
-                secCounter = 20;
-            }
-            secCounter--;
-
-            display_led1(100);
-            display_led2(100);
             LcdPrintStringS(0, 0, "ENTER SLOW MODE");
             LcdPrintStringS(1, 0, "Press 1 for menu");
             if (isButtonEnter(0) == 1) {
                 waitCounter = WAIT_TIME;
                 LcdClearS();
                 statusOfSystem = MENU_3;
-                statusOfTraffic = INIT_TRAFFIC;
             }
             break;
 
         case UART_RED_COMPLETE:
+            uartRedFlag = 1;
+
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -1199,7 +1227,7 @@ void menuRun() {
             }
             LcdPrintStringS(0, 0, "Data received!");
             LcdPrintStringS(1, 0, "Red time:");
-            LcdPrintNumS(1, 10, globalTimeOfRed);
+            LcdPrintNumS(1, 10, uartGlobalTimeOfRed);
 
             if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
                 statusOfUart = UART_WAIT;
@@ -1210,6 +1238,8 @@ void menuRun() {
             }
             break;
         case UART_GREEN_COMPLETE:
+            uartGreenFlag = 1;
+
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -1222,7 +1252,7 @@ void menuRun() {
 
             LcdPrintStringS(0, 0, "Data received!");
             LcdPrintStringS(1, 0, "Green time: ");
-            LcdPrintNumS(1, 12, globalTimeOfGreen);
+            LcdPrintNumS(1, 12, uartGlobalTimeOfGreen);
 
             if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
                 statusOfUart = UART_WAIT;
@@ -1233,6 +1263,8 @@ void menuRun() {
             }
             break;
         case UART_YELLOW_COMPLETE:
+            uartYellowFlag = 1;
+
             if (secCounter <= 0) {
                 secCounter = 20;
                 waitCounter--;
@@ -1245,7 +1277,7 @@ void menuRun() {
 
             LcdPrintStringS(0, 0, "Data received!");
             LcdPrintStringS(1, 0, "Yellow time: ");
-            LcdPrintNumS(1, 13, globalTimeOfYellow);
+            LcdPrintNumS(1, 13, uartGlobalTimeOfYellow);
 
             if (isButtonEnter(0) == 1 && uartPrePress1 == 1) {
                 statusOfUart = UART_WAIT;
@@ -1267,51 +1299,63 @@ void UartDataReceiveProcess() {
         case UART_CONFORM_RED:
             if (flagOfDataReceiveComplete == 1) {
                 flagOfDataReceiveComplete = 0;
-                if (dataReceive[0] == 'R') {
-                    globalTimeOfRed = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                if (dataReceive[0] == 'R' && ('0' <= dataReceive[1] && dataReceive[1] <= '9')
+                        && ('0' <= dataReceive[2] && dataReceive[2] <= '9')) {
+                    uartGlobalTimeOfRed = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
                     LcdClearS();
                     waitCounter = 2;
                     statusOfSystem = UART_RED_COMPLETE;
                     statusOfUart = UART_WAIT;
                     UartSendString("Data received successfully! \r\n");
                     UartSendString("  New RED time is: ");
-                    UartSendNum(globalTimeOfRed);
+                    UartSendNum(uartGlobalTimeOfRed);
                     UartSendString(" seconds. \r\n");
                     UartSendString("\r\n");
+                } else {
+                    flagOfDataReceiveComplete = 1;
+                    statusOfUart = UART_ERROR;
                 }
             }
             break;
         case UART_CONFORM_GREEN:
             if (flagOfDataReceiveComplete == 1) {
                 flagOfDataReceiveComplete = 0;
-                if (dataReceive[0] == 'G') {
-                    globalTimeOfGreen = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                if (dataReceive[0] == 'G' && ('0' <= dataReceive[1] && dataReceive[1] <= '9')
+                        && ('0' <= dataReceive[2] && dataReceive[2] <= '9')) {
+                    uartGlobalTimeOfGreen = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
                     waitCounter = 2;
                     LcdClearS();
                     statusOfSystem = UART_GREEN_COMPLETE;
                     statusOfUart = UART_WAIT;
                     UartSendString("Data received successfully! \r\n");
                     UartSendString("  New GREEN time is: ");
-                    UartSendNum(globalTimeOfGreen);
+                    UartSendNum(uartGlobalTimeOfGreen);
                     UartSendString(" seconds. \r\n");
                     UartSendString("\r\n");
+                } else {
+                    flagOfDataReceiveComplete = 1;
+                    statusOfUart = UART_ERROR;
                 }
             }
             break;
         case UART_CONFORM_YELLOW:
             if (flagOfDataReceiveComplete == 1) {
                 flagOfDataReceiveComplete = 0;
-                if (dataReceive[0] == 'Y') {
-                    globalTimeOfYellow = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
+                if (dataReceive[0] == 'Y' && ('0' <= dataReceive[1] && dataReceive[1] <= '9')
+                        && ('0' <= dataReceive[2] && dataReceive[2] <= '9')) {
+                    uartGlobalTimeOfYellow = (dataReceive[1] - 48)*10 + (dataReceive[2] - 48);
                     waitCounter = 2;
                     LcdClearS();
                     statusOfSystem = UART_YELLOW_COMPLETE;
                     statusOfUart = UART_WAIT;
                     UartSendString("Data received successfully! \r\n");
                     UartSendString("  New YELLOW time is: ");
-                    UartSendNum(globalTimeOfYellow);
+                    UartSendNum(uartGlobalTimeOfYellow);
                     UartSendString(" seconds. \r\n");
                     UartSendString("\r\n");
+                } else {
+                    flagOfDataReceiveComplete = 1;
+                    statusOfUart = UART_ERROR;
                 }
             }
             break;
@@ -1324,10 +1368,14 @@ void UartDataReceiveProcess() {
                     LcdClearS();
                     statusOfSystem = SLOW_MODE;
                     statusOfUart = UART_WAIT;
-                    statusOfTraffic = WAIT_TRAFFIC;
+                    statusOfTraffic = SLOW_MODE;
                     UartSendString("Data received successfully! \r\n");
                     UartSendString("  Slow mode activated!");
                     UartSendString("\r\n");
+                    UartSendString("\r\n");
+                } else {
+                    flagOfDataReceiveComplete = 1;
+                    statusOfUart = UART_ERROR;
                 }
             }
             break;
@@ -1343,6 +1391,10 @@ void UartDataReceiveProcess() {
                     UartSendString("Data received successfully! \r\n");
                     UartSendString("  Automatic mode activated!");
                     UartSendString("\r\n");
+                    UartSendString("\r\n");
+                } else {
+                    flagOfDataReceiveComplete = 1;
+                    statusOfUart = UART_ERROR;
                 }
             }
             break;

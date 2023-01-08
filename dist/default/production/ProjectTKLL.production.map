@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Mon Jan 02 19:38:08 2023
+Linker Map File - Created Sun Jan 08 22:45:32 2023
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -42,34 +42,34 @@ Linker Map File - Created Mon Jan 02 19:38:08 2023
       .idata_fxd2424u.o_i    romdata   0x000014    program   0x000000
        InterruptVectorLow       code   0x000018    program   0x000006
                    .cinit    romdata   0x00001e    program   0x00006e
-             .code_main.o       code   0x00008c    program   0x001c7e
-              .code_lcd.o       code   0x001d0a    program   0x000e40
-            .code_timer.o       code   0x002b4a    program   0x00055a
-          .code_led7seg.o       code   0x0030a4    program   0x000488
-             .code_uart.o       code   0x00352c    program   0x00046a
-              .code_i2c.o       code   0x003996    program   0x000340
-           .code_button.o       code   0x003cd6    program   0x0002da
-      .code_traffic_led.o       code   0x003fb0    program   0x000284
-             .stringtable    romdata   0x004234    program   0x000246
-        .code_interrupt.o       code   0x00447a    program   0x0001f4
- .code_simulate_machine.o       code   0x00466e    program   0x0000e6
-                     PROG       code   0x004754    program   0x0000a6
-               _cinit_scn       code   0x0047fa    program   0x00009e
-              .code_adc.o       code   0x004898    program   0x000090
-          .code_fxm3232.o       code   0x004928    program   0x000070
-         .code_fxd3232u.o       code   0x004998    program   0x000048
-         .code_fxd2424u.o       code   0x0049e0    program   0x00003a
-              .code_pwm.o       code   0x004a1a    program   0x000038
-         .code_fxd1616u.o       code   0x004a52    program   0x00002c
-                    .code       code   0x004a7e    program   0x000020
-             _startup_scn       code   0x004a9e    program   0x00001c
-         .code_fxd0808u.o       code   0x004aba    program   0x00001c
-         .idata_timer.o_i    romdata   0x004ad6    program   0x000020
-.idata_simulate_machine.o_i    romdata   0x004af6    program   0x00000c
-          .idata_main.o_i    romdata   0x004b02    program   0x00002c
-           .idata_lcd.o_i    romdata   0x004b2e    program   0x000061
-           .idata_i2c.o_i    romdata   0x004b8f    program   0x00001b
-        .idata_button.o_i    romdata   0x004baa    program   0x000029
+             .code_main.o       code   0x00008c    program   0x001d68
+              .code_lcd.o       code   0x001df4    program   0x000e40
+            .code_timer.o       code   0x002c34    program   0x00055a
+          .code_led7seg.o       code   0x00318e    program   0x000488
+             .code_uart.o       code   0x003616    program   0x00046a
+              .code_i2c.o       code   0x003a80    program   0x000340
+           .code_button.o       code   0x003dc0    program   0x0002da
+      .code_traffic_led.o       code   0x00409a    program   0x000284
+             .stringtable    romdata   0x00431e    program   0x000246
+        .code_interrupt.o       code   0x004564    program   0x0001f4
+ .code_simulate_machine.o       code   0x004758    program   0x0000e6
+                     PROG       code   0x00483e    program   0x0000a6
+               _cinit_scn       code   0x0048e4    program   0x00009e
+              .code_adc.o       code   0x004982    program   0x000090
+          .code_fxm3232.o       code   0x004a12    program   0x000070
+         .code_fxd3232u.o       code   0x004a82    program   0x000048
+         .code_fxd2424u.o       code   0x004aca    program   0x00003a
+              .code_pwm.o       code   0x004b04    program   0x000038
+         .code_fxd1616u.o       code   0x004b3c    program   0x00002c
+                    .code       code   0x004b68    program   0x000020
+             _startup_scn       code   0x004b88    program   0x00001c
+         .code_fxd0808u.o       code   0x004ba4    program   0x00001c
+         .idata_timer.o_i    romdata   0x004bc0    program   0x000020
+.idata_simulate_machine.o_i    romdata   0x004be0    program   0x00000c
+          .idata_main.o_i    romdata   0x004bec    program   0x000035
+           .idata_lcd.o_i    romdata   0x004c21    program   0x000061
+           .idata_i2c.o_i    romdata   0x004c82    program   0x00001b
+        .idata_button.o_i    romdata   0x004c9d    program   0x000029
     .config_300001_main.o    romdata   0x300001    program   0x000001
     .config_300002_main.o    romdata   0x300002    program   0x000001
     .config_300003_main.o    romdata   0x300003    program   0x000001
@@ -85,38 +85,38 @@ Linker Map File - Created Mon Jan 02 19:38:08 2023
                  .tmpdata      udata   0x000010       data   0x00000a
 .udata_simulate_machine.o      udata   0x000080       data   0x000065
              .idata_i2c.o      idata   0x0000e5       data   0x00001b
-            .idata_main.o      idata   0x000100       data   0x00002c
-          .idata_button.o      idata   0x00012c       data   0x000029
-           .idata_timer.o      idata   0x000155       data   0x000020
-.idata_simulate_machine.o      idata   0x000175       data   0x00000c
-           .udata_c018i.o      udata   0x000181       data   0x00000a
-       .idata_interrupt.o      idata   0x00018b       data   0x000004
-             .udata_i2c.o      udata   0x00018f       data   0x000001
-     .idata_traffic_led.o      idata   0x000190       data   0x000001
-             .idata_pwm.o      idata   0x000191       data   0x000001
-          .idata___init.o      idata   0x000192       data   0x000000
-          .udata___init.o      udata   0x000192       data   0x000000
-         .idata_fxm3232.o      idata   0x000192       data   0x000000
-         .udata_fxm3232.o      udata   0x000192       data   0x000000
-        .idata_fxd3232u.o      idata   0x000192       data   0x000000
-        .udata_fxd3232u.o      udata   0x000192       data   0x000000
-        .idata_fxd2424u.o      idata   0x000192       data   0x000000
-        .udata_fxd2424u.o      udata   0x000192       data   0x000000
-        .idata_fxd1616u.o      idata   0x000192       data   0x000000
-        .udata_fxd1616u.o      udata   0x000192       data   0x000000
-        .idata_fxd0808u.o      idata   0x000192       data   0x000000
-        .udata_fxd0808u.o      udata   0x000192       data   0x000000
-           .idata_c018i.o      idata   0x000192       data   0x000000
-     .udata_traffic_led.o      udata   0x000192       data   0x000000
-         .idata_led7seg.o      idata   0x000192       data   0x000000
-         .udata_led7seg.o      udata   0x000192       data   0x000000
-            .udata_uart.o      udata   0x000192       data   0x000000
-            .idata_uart.o      idata   0x000192       data   0x000000
-            .udata_main.o      udata   0x000192       data   0x000000
-             .idata_adc.o      idata   0x000192       data   0x000000
-          .udata_button.o      udata   0x000192       data   0x000000
-       .udata_interrupt.o      udata   0x000192       data   0x000000
-           .udata_timer.o      udata   0x000192       data   0x000000
+            .idata_main.o      idata   0x000100       data   0x000035
+          .idata_button.o      idata   0x000135       data   0x000029
+           .idata_timer.o      idata   0x00015e       data   0x000020
+.idata_simulate_machine.o      idata   0x00017e       data   0x00000c
+           .udata_c018i.o      udata   0x00018a       data   0x00000a
+       .idata_interrupt.o      idata   0x000194       data   0x000004
+             .udata_i2c.o      udata   0x000198       data   0x000001
+     .idata_traffic_led.o      idata   0x000199       data   0x000001
+             .idata_pwm.o      idata   0x00019a       data   0x000001
+          .idata___init.o      idata   0x00019b       data   0x000000
+          .udata___init.o      udata   0x00019b       data   0x000000
+         .idata_fxm3232.o      idata   0x00019b       data   0x000000
+         .udata_fxm3232.o      udata   0x00019b       data   0x000000
+        .idata_fxd3232u.o      idata   0x00019b       data   0x000000
+        .udata_fxd3232u.o      udata   0x00019b       data   0x000000
+        .idata_fxd2424u.o      idata   0x00019b       data   0x000000
+        .udata_fxd2424u.o      udata   0x00019b       data   0x000000
+        .idata_fxd1616u.o      idata   0x00019b       data   0x000000
+        .udata_fxd1616u.o      udata   0x00019b       data   0x000000
+        .idata_fxd0808u.o      idata   0x00019b       data   0x000000
+        .udata_fxd0808u.o      udata   0x00019b       data   0x000000
+           .idata_c018i.o      idata   0x00019b       data   0x000000
+     .udata_traffic_led.o      udata   0x00019b       data   0x000000
+         .idata_led7seg.o      idata   0x00019b       data   0x000000
+         .udata_led7seg.o      udata   0x00019b       data   0x000000
+            .udata_uart.o      udata   0x00019b       data   0x000000
+            .idata_uart.o      idata   0x00019b       data   0x000000
+            .udata_main.o      udata   0x00019b       data   0x000000
+             .idata_adc.o      idata   0x00019b       data   0x000000
+          .udata_button.o      udata   0x00019b       data   0x000000
+       .udata_interrupt.o      udata   0x00019b       data   0x000000
+           .udata_timer.o      udata   0x00019b       data   0x000000
                    .stack      udata   0x000e00       data   0x000100
              .idata_lcd.o      idata   0x000f00       data   0x000061
              .udata_adc.o      udata   0x000f61       data   0x00001a
@@ -130,11 +130,11 @@ Linker Map File - Created Mon Jan 02 19:38:08 2023
                                Start         End      
                            ---------   ---------      
                             0x000000    0x000013      
-                            0x000018    0x004bd2      
+                            0x000018    0x004cc5      
                             0x300001    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            19418 out of 66584 program addresses used, program memory utilization is 29%
+            19661 out of 66584 program addresses used, program memory utilization is 29%
 
 
 
@@ -142,52 +142,52 @@ Linker Map File - Created Mon Jan 02 19:38:08 2023
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
           AppTrafficLight   0x0001e2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                  BCD2Dec   0x003996    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                   D1616S   0x004776    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x004784    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x004780    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x004796    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D2424S   0x0047ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                D2424SNEG   0x0047d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 D2424SOK   0x0047d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  D2424SX   0x0047f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  DA1616S   0x004766    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA2424S   0x0047b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  Dec2BCD   0x0039d4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-         DisplayLcdScreen   0x00264a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-        DisplayLcdScreen2   0x002742    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-      DisplayLcdScreenOld   0x0027c8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                 FXD0808U   0x004aba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                 FXD1616S   0x004754    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x004a52    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXD2424S   0x0047a0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 FXD2424U   0x0049e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
-                 FXD3232U   0x004998    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                  FXM3232   0x004928    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
+                  BCD2Dec   0x003a80    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                   D1616S   0x004860    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00486e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00486a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x004880    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D2424S   0x0048b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                D2424SNEG   0x0048c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 D2424SOK   0x0048be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  D2424SX   0x0048da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  DA1616S   0x004850    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA2424S   0x0048a0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  Dec2BCD   0x003abe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+         DisplayLcdScreen   0x002734    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+        DisplayLcdScreen2   0x00282c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+      DisplayLcdScreenOld   0x0028b2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                 FXD0808U   0x004ba4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                 FXD1616S   0x00483e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x004b3c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXD2424S   0x00488a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 FXD2424U   0x004aca    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
+                 FXD3232U   0x004a82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                  FXM3232   0x004a12    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
       InterruptVectorHigh   0x000008    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
        InterruptVectorLow   0x000018    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                LcdClearS   0x0025ec    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            LcdPrintCharS   0x002832    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              LcdPrintNum   0x00252a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-             LcdPrintNumS   0x0028a6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           LcdPrintString   0x002572    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          LcdPrintStringS   0x002af4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-             SetTimer0_ms   0x002fc6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer1_ms   0x002fea    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer2_ms   0x003028    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer3_ms   0x003066    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-         SimulatedataSend   0x004752    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-   UartDataReceiveProcess   0x001abe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              UartSendNum   0x00375c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-           UartSendString   0x00362e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-       ___return_lbl00000   0x004ad4    program     static                          
-       ___return_lbl00000   0x004996    program     static                          
-       ___return_lbl00000   0x004a7c    program     static                          
-       ___return_lbl00000   0x004a18    program     static                          
-       ___return_lbl00000   0x0049de    program     static                          
+                LcdClearS   0x0026d6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            LcdPrintCharS   0x00291c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              LcdPrintNum   0x002614    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+             LcdPrintNumS   0x002990    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           LcdPrintString   0x00265c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          LcdPrintStringS   0x002bde    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+             SetTimer0_ms   0x0030b0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer1_ms   0x0030d4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer2_ms   0x003112    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer3_ms   0x003150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+         SimulatedataSend   0x00483c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+   UartDataReceiveProcess   0x001b0a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              UartSendNum   0x003846    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+           UartSendString   0x003718    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+       ___return_lbl00000   0x004bbe    program     static                          
+       ___return_lbl00000   0x004a80    program     static                          
+       ___return_lbl00000   0x004b66    program     static                          
+       ___return_lbl00000   0x004b02    program     static                          
+       ___return_lbl00000   0x004ac8    program     static                          
        ___return_lbl00000   0x000004    program     static                          
-       ___return_lbl00001   0x004ab8    program     static                          
-       ___return_lbl00002   0x004896    program     static                          
+       ___return_lbl00001   0x004ba2    program     static                          
+       ___return_lbl00002   0x004980    program     static                          
        ___return_lbl00002   0x00001c    program     static                          
        ___return_lbl00003   0x00000c    program     static                          
                __config_0   0x300001    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
@@ -202,183 +202,182 @@ Linker Map File - Created Mon Jan 02 19:38:08 2023
                __config_8   0x30000b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                __config_9   0x30000c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                    __init   0x000006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-               __string_0   0x00446d    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_1   0x00445e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_10   0x0043dd    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_11   0x0043cc    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_12   0x0043bf    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_13   0x0043b6    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_14   0x0043b4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_15   0x0043a5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_16   0x00439e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_17   0x00438f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_18   0x004388    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_19   0x004378    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_2   0x00444e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_20   0x004371    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_21   0x004366    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_22   0x00435e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_23   0x004350    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_24   0x004341    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_25   0x00433e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_26   0x00432e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_27   0x00431f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_28   0x004315    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_29   0x004308    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_3   0x00443f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_30   0x0042fa    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_31   0x0042db    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_32   0x0042c7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_33   0x0042ba    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_34   0x0042b7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_35   0x0042a1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_36   0x00428a    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_37   0x004273    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_38   0x004257    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_39   0x004234    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_4   0x004432    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_5   0x004422    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_6   0x004418    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_7   0x004407    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_8   0x0043fb    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_9   0x0043ee    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __tmplbl_57   0x001a0e    program     static                          
-              __tmplbl_58   0x001976    program     static                          
-              __tmplbl_59   0x0018da    program     static                          
-              __tmplbl_60   0x001850    program     static                          
-              __tmplbl_61   0x001760    program     static                          
-              __tmplbl_62   0x001620    program     static                          
-              __tmplbl_63   0x0014a2    program     static                          
-              __tmplbl_64   0x0013c2    program     static                          
-              __tmplbl_65   0x0012d8    program     static                          
-              __tmplbl_73   0x001abc    program     static                          
-              __tmplbl_74   0x00175c    program     static                          
-              __tmplbl_75   0x001abc    program     static                          
-              __tmplbl_76   0x0018d4    program     static                          
-              __tmplbl_77   0x001abc    program     static                          
-              __tmplbl_78   0x001848    program     static                          
-              __tmplbl_85   0x001abc    program     static                          
-            __zero_memory   0x004a7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                _do_cinit   0x0047fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               __string_0   0x004557    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_1   0x004548    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_10   0x0044c7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_11   0x0044b6    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_12   0x0044a9    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_13   0x0044a0    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_14   0x00449e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_15   0x00448f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_16   0x004488    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_17   0x004479    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_18   0x004472    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_19   0x004462    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_2   0x004538    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_20   0x00445b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_21   0x004450    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_22   0x004448    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_23   0x00443a    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_24   0x00442b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_25   0x004428    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_26   0x004418    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_27   0x004409    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_28   0x0043ff    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_29   0x0043f2    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_3   0x004529    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_30   0x0043e4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_31   0x0043c5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_32   0x0043b1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_33   0x0043a4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_34   0x0043a1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_35   0x00438b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_36   0x004374    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_37   0x00435d    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_38   0x004341    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_39   0x00431e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_4   0x00451c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_5   0x00450c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_6   0x004502    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_7   0x0044f1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_8   0x0044e5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_9   0x0044d8    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+             __tmplbl_100   0x0018ba    program     static                          
+             __tmplbl_107   0x001b08    program     static                          
+              __tmplbl_80   0x001a56    program     static                          
+              __tmplbl_81   0x0019ba    program     static                          
+              __tmplbl_82   0x00191a    program     static                          
+              __tmplbl_83   0x0018c2    program     static                          
+              __tmplbl_84   0x0017d4    program     static                          
+              __tmplbl_85   0x001696    program     static                          
+              __tmplbl_86   0x00150c    program     static                          
+              __tmplbl_87   0x00142c    program     static                          
+              __tmplbl_88   0x001342    program     static                          
+              __tmplbl_96   0x001b08    program     static                          
+              __tmplbl_97   0x001916    program     static                          
+              __tmplbl_98   0x001b08    program     static                          
+              __tmplbl_99   0x001b08    program     static                          
+            __zero_memory   0x004b68    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                _do_cinit   0x0048e4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _false   0x0049da    program     static                          
-                   _false   0x004a14    program     static                          
-                 _startup   0x004a9e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-              blinkGreens   0x004010    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                blinkLeds   0x003fd0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                blinkReds   0x003fe4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-             blinkYellows   0x003ffa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-          button_delay_ms   0x003f28    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-                compare_l   0x004a94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-             control_led1   0x003400    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             control_led2   0x003452    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-      control_traffic_led   0x004178    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                copy_loop   0x00486c    program     static                          
-            copy_one_byte   0x004872    program     static                          
+                   _false   0x004ac4    program     static                          
+                   _false   0x004afe    program     static                          
+                 _startup   0x004b88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+              blinkGreens   0x0040fa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                blinkLeds   0x0040ba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                blinkReds   0x0040ce    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+             blinkYellows   0x0040e4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+          button_delay_ms   0x004012    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+                compare_l   0x004b7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+             control_led1   0x0034ea    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             control_led2   0x00353c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+      control_traffic_led   0x004262    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                copy_loop   0x004956    program     static                          
+            copy_one_byte   0x00495c    program     static                          
                  delay_ms   0x0000c8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-            delay_ms_7seg   0x0034a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-         delay_ms_traffic   0x0041ac    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-             display_led1   0x00325c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             display_led2   0x00332e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-                     done   0x004896    program     static                          
-             done_copying   0x004880    program     static                          
-           ds1307_control   0x003a42    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-           eeprom_control   0x003a60    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                  endloop   0x004ad0    program     static                          
-                  endloop   0x004a78    program     static                          
-               fsm_manual   0x000362    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               fsm_tuning   0x00075a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-            get_adc_value   0x0048aa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-                 high_isr   0x004586    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                  i2c_ack   0x003aba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                  i2c_nak   0x003ac6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 i2c_read   0x003aae    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                i2c_start   0x003a7e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 i2c_stop   0x003a88    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                i2c_write   0x003a92    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 init_adc   0x004898    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-            init_ext_int0   0x004482    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                 init_i2c   0x003a2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-           init_interrupt   0x00447a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-          init_key_matrix   0x003cd6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-init_key_matrix_with_uart   0x003cde    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+            delay_ms_7seg   0x00358e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+         delay_ms_traffic   0x004296    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+             display_led1   0x003346    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             display_led2   0x003418    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+                     done   0x004980    program     static                          
+             done_copying   0x00496a    program     static                          
+           ds1307_control   0x003b2c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+           eeprom_control   0x003b4a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  endloop   0x004bba    program     static                          
+                  endloop   0x004b62    program     static                          
+               fsm_manual   0x0003ca    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               fsm_tuning   0x0007c2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+            get_adc_value   0x004994    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+                 high_isr   0x004670    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                  i2c_ack   0x003ba4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  i2c_nak   0x003bb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 i2c_read   0x003b98    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                i2c_start   0x003b68    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 i2c_stop   0x003b72    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                i2c_write   0x003b7c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 init_adc   0x004982    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+            init_ext_int0   0x00456c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                 init_i2c   0x003b14    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+           init_interrupt   0x004564    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+          init_key_matrix   0x003dc0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+init_key_matrix_with_uart   0x003dc8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
               init_output   0x000150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                 init_pwm   0x004a1a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+                 init_pwm   0x004b04    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
               init_system   0x00015a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              init_timer0   0x002b4a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer1   0x002c8e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer2   0x002dd8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer3   0x002e10    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                init_uart   0x00352c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-         isButtonDecrease   0x003ee4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-          isButtonESCHold   0x003e80    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-            isButtonEnter   0x003e46    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-         isButtonIncrease   0x003ea0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-            isConformHold   0x003e90    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-                lcd_clear   0x0021fe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                lcd_delay   0x001d0a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                 lcd_init   0x001eaa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-             lcd_power_of   0x002212    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_print_char   0x00216a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_print_charS   0x0025a6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_print_num   0x0022f4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_print_str   0x002184    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              lcd_putchar   0x002150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_read_status   0x001fba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_sendCommand   0x001e2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_set_cursor   0x0021c4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_wait_busy   0x002070    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_write_4bits   0x002090    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_write_cmd   0x0020d6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_write_data   0x002112    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                     loop   0x004aae    program     static                          
-                     loop   0x0049a6    program     static                          
-                     loop   0x0049ec    program     static                          
-                     loop   0x004ac2    program     static                          
-                     loop   0x004a5c    program     static                          
-                   loop_h   0x004a8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   loop_l   0x004a96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  low_isr   0x00448a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+              init_timer0   0x002c34    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer1   0x002d78    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer2   0x002ec2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer3   0x002efa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                init_uart   0x003616    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+         isButtonDecrease   0x003fce    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+          isButtonESCHold   0x003f6a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+            isButtonEnter   0x003f30    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+         isButtonIncrease   0x003f8a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+            isConformHold   0x003f7a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+                lcd_clear   0x0022e8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                lcd_delay   0x001df4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                 lcd_init   0x001f94    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+             lcd_power_of   0x0022fc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_print_char   0x002254    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_print_charS   0x002690    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_print_num   0x0023de    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_print_str   0x00226e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              lcd_putchar   0x00223a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_read_status   0x0020a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_sendCommand   0x001f14    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_set_cursor   0x0022ae    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_wait_busy   0x00215a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_write_4bits   0x00217a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_write_cmd   0x0021c0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_write_data   0x0021fc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                     loop   0x004b98    program     static                          
+                     loop   0x004a90    program     static                          
+                     loop   0x004ad6    program     static                          
+                     loop   0x004bac    program     static                          
+                     loop   0x004b46    program     static                          
+                   loop_h   0x004b76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   loop_l   0x004b80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  low_isr   0x004574    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
                      main   0x00008c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                  menuRun   0x000a78    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               offAllLeds   0x003fbe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-              read_ds1307   0x003bca    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-              read_eeprom   0x003c40    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-scan_key_matrix_with_uart   0x003ce8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-               setAllLeds   0x003fb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                setGreen1   0x004052    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                setGreen2   0x004094    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  setRed1   0x004026    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  setRed2   0x004068    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               setYellow1   0x00403c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               setYellow2   0x00407e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-             set_DC_speed   0x004a3c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
-             start_timer0   0x002c02    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer1   0x002d48    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer2   0x002e04    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer3   0x002ec6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer0   0x002bfe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer1   0x002dd4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer2   0x002e0c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer3   0x002f52    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                     test   0x004814    program     static                          
-               timer0_isr   0x002f56    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer1_isr   0x002f72    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer2_isr   0x002f8e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer3_isr   0x002faa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-            uart_delay_ms   0x00354a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                 uart_isr   0x003992    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-            uart_power_of   0x00367a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-             uart_putchar   0x0035d2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-            uart_send_str   0x0035ee    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                 v_timer0   0x001d9a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              write_8bit1   0x0030a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-              write_8bit2   0x003180    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-       write_8bit_traffic   0x0040aa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-             write_ds1307   0x003ad2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-             write_eeprom   0x003b3c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-               zero_block   0x004a8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  menuRun   0x000ae0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               offAllLeds   0x0040a8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+              read_ds1307   0x003cb4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+              read_eeprom   0x003d2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+scan_key_matrix_with_uart   0x003dd2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+               setAllLeds   0x00409a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                setGreen1   0x00413c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                setGreen2   0x00417e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                  setRed1   0x004110    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                  setRed2   0x004152    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               setYellow1   0x004126    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               setYellow2   0x004168    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+             set_DC_speed   0x004b26    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+             start_timer0   0x002cec    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer1   0x002e32    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer2   0x002eee    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer3   0x002fb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer0   0x002ce8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer1   0x002ebe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer2   0x002ef6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer3   0x00303c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                     test   0x0048fe    program     static                          
+               timer0_isr   0x003040    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer1_isr   0x00305c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer2_isr   0x003078    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer3_isr   0x003094    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+            uart_delay_ms   0x003634    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+                 uart_isr   0x003a7c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+uart_isr_simulate_machine   0x004758    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+            uart_power_of   0x003764    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+             uart_putchar   0x0036bc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+            uart_send_str   0x0036d8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+                 v_timer0   0x001e84    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              write_8bit1   0x00318e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+              write_8bit2   0x00326a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+       write_8bit_traffic   0x004194    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+             write_ds1307   0x003bbc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+             write_eeprom   0x003c26    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+               zero_block   0x004b76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -569,7 +568,7 @@ uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA
                    WDTCON   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                WDTCONbits   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-             WaitResponse   0x000176       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+             WaitResponse   0x00017f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                  __AARGB0   0x000009       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB1   0x000008       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB2   0x000007       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
@@ -590,95 +589,104 @@ uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA
                   __REMB1   0x000004       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB2   0x000003       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB3   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  ack_bit   0x00018f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+                  ack_bit   0x000198       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
                  ack_flag   0x0000fd       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
                 adc_value   0x000f61       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-      arrayMaskInputOfKey   0x000150       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-     arrayMaskOutputOfKey   0x00014c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-              buttonDelay   0x000154       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+      arrayMaskInputOfKey   0x000159       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+     arrayMaskOutputOfKey   0x000155       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+              buttonDelay   0x00015d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
                  byte_num   0x0000e6       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                     cnt0   0x00018b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                     cnt1   0x00018d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-               cur_status   0x000190       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                curr_byte   0x000184       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x000186       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     cnt0   0x000194       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                     cnt1   0x000196       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+               cur_status   0x000199       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                curr_byte   0x00018d       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x00018f       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
               current_col   0x000f7d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
               current_row   0x000f7b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
               dataReceive   0x000081       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                  dataSend   0x0000b3       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-                 data_ptr   0x000188       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               duty_cycle   0x000191       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
-flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+                 data_ptr   0x000191       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               duty_cycle   0x00019a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+flagOfDataReceiveComplete   0x000181       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                 flag_read   0x0000e5       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-              flag_timer0   0x00015d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer1   0x00015e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer2   0x00015f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer3   0x000160       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer0   0x000166       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer1   0x000167       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer2   0x000168       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer3   0x000169       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
         globalTimeOfGreen   0x00011d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
           globalTimeOfRed   0x00011e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
        globalTimeOfYellow   0x00011f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                greenFlag   0x000130       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                         i   0x000080       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                  i2c_data   0x0000ff       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-       indexOfDataReceive   0x00017a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-           indexOfMachine   0x000179       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-          indexOfdataSend   0x00017b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+       indexOfDataReceive   0x000183       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+           indexOfMachine   0x000182       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+          indexOfdataSend   0x000184       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                 index_add   0x0000e7       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 key_code   0x00012c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-      numberOfDataReceive   0x00017c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-         numberOfDataSend   0x00017d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-                 prePress   0x000128       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              preTunState   0x000127       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                     prom   0x000181       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 key_code   0x000135       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+      numberOfDataReceive   0x000185       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+         numberOfDataSend   0x000186       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+                 prePress   0x00012b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              preTunState   0x00012a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                     prom   0x00018a       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                 read_data   0x0000f3       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
              receive_data   0x0000fe       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
              receive_flag   0x0000fc       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-               secCounter   0x000122       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-           secMenuCounter   0x000124       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-        secTrafficCounter   0x000123       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                  redFlag   0x00012f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               secCounter   0x000125       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           secMenuCounter   0x000127       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+        secTrafficCounter   0x000126       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                     speed   0x000f7f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
                 statusLCD   0x000f40       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
            statusOfSystem   0x000116       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
           statusOfTraffic   0x000117       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-             statusOfUart   0x00017e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-            statusReceive   0x000177       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-             statusSim900   0x000175       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-       tempTrafficCounter   0x000126       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                time0_MUL   0x00016d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time1_MUL   0x00016f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time2_MUL   0x000171       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time3_MUL   0x000173       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-       timeChangedataSend   0x00017f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-              timeCounter   0x000120       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+             statusOfUart   0x000187       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+            statusReceive   0x000180       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+             statusSim900   0x00017e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+       tempTrafficCounter   0x000129       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                time0_MUL   0x000176       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time1_MUL   0x000178       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time2_MUL   0x00017a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time3_MUL   0x00017c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+       timeChangedataSend   0x000188       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+              timeCounter   0x000123       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
               timeOf7Seg1   0x00011b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
               timeOf7Seg2   0x00011c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
               timeOfGreen   0x000119       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                 timeOfRed   0x000118       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
              timeOfYellow   0x00011a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               timer0_cnt   0x000165       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer0_value   0x000155       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer1_cnt   0x000167       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer1_value   0x000157       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer2_cnt   0x000169       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer2_value   0x000159       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer3_cnt   0x00016b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer3_value   0x00015b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-           trafficCounter   0x000121       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              tunPrePress   0x00012b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-             uartPrePress   0x000129       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-            uartPrePress1   0x00012a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                   v_cnt0   0x000161       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                   v_cnt1   0x000163       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              waitCounter   0x000125       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               timer0_cnt   0x00016e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer0_value   0x00015e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer1_cnt   0x000170       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer1_value   0x000160       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer2_cnt   0x000172       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer2_value   0x000162       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer3_cnt   0x000174       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer3_value   0x000164       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+           trafficCounter   0x000124       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              tunPrePress   0x00012e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+    uartGlobalTimeOfGreen   0x000120       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+      uartGlobalTimeOfRed   0x000121       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+   uartGlobalTimeOfYellow   0x000122       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+            uartGreenFlag   0x000133       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+             uartPrePress   0x00012c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+            uartPrePress1   0x00012d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              uartRedFlag   0x000132       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           uartYellowFlag   0x000134       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                   v_cnt0   0x00016a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                   v_cnt1   0x00016c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              waitCounter   0x000128       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                write_data   0x0000e8       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+               yellowFlag   0x000131       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
 
 
 
@@ -697,221 +705,220 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
               init_output   0x000150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
               init_system   0x00015a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
           AppTrafficLight   0x0001e2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               fsm_manual   0x000362    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               fsm_tuning   0x00075a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                  menuRun   0x000a78    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __tmplbl_65   0x0012d8    program     static                          
-              __tmplbl_64   0x0013c2    program     static                          
-              __tmplbl_63   0x0014a2    program     static                          
-              __tmplbl_62   0x001620    program     static                          
-              __tmplbl_74   0x00175c    program     static                          
-              __tmplbl_61   0x001760    program     static                          
-              __tmplbl_78   0x001848    program     static                          
-              __tmplbl_60   0x001850    program     static                          
-              __tmplbl_76   0x0018d4    program     static                          
-              __tmplbl_59   0x0018da    program     static                          
-              __tmplbl_58   0x001976    program     static                          
-              __tmplbl_57   0x001a0e    program     static                          
-              __tmplbl_85   0x001abc    program     static                          
-              __tmplbl_77   0x001abc    program     static                          
-              __tmplbl_75   0x001abc    program     static                          
-              __tmplbl_73   0x001abc    program     static                          
-   UartDataReceiveProcess   0x001abe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                lcd_delay   0x001d0a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                 v_timer0   0x001d9a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_sendCommand   0x001e2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                 lcd_init   0x001eaa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_read_status   0x001fba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_wait_busy   0x002070    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_write_4bits   0x002090    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_write_cmd   0x0020d6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_write_data   0x002112    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              lcd_putchar   0x002150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_print_char   0x00216a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_print_str   0x002184    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           lcd_set_cursor   0x0021c4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                lcd_clear   0x0021fe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-             lcd_power_of   0x002212    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            lcd_print_num   0x0022f4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              LcdPrintNum   0x00252a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-           LcdPrintString   0x002572    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          lcd_print_charS   0x0025a6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                LcdClearS   0x0025ec    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-         DisplayLcdScreen   0x00264a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-        DisplayLcdScreen2   0x002742    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-      DisplayLcdScreenOld   0x0027c8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-            LcdPrintCharS   0x002832    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-             LcdPrintNumS   0x0028a6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-          LcdPrintStringS   0x002af4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-              init_timer0   0x002b4a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer0   0x002bfe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer0   0x002c02    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer1   0x002c8e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer1   0x002d48    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer1   0x002dd4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer2   0x002dd8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer2   0x002e04    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer2   0x002e0c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              init_timer3   0x002e10    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             start_timer3   0x002ec6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              stop_timer3   0x002f52    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer0_isr   0x002f56    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer1_isr   0x002f72    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer2_isr   0x002f8e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer3_isr   0x002faa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer0_ms   0x002fc6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer1_ms   0x002fea    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer2_ms   0x003028    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             SetTimer3_ms   0x003066    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              write_8bit1   0x0030a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-              write_8bit2   0x003180    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             display_led1   0x00325c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             display_led2   0x00332e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             control_led1   0x003400    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-             control_led2   0x003452    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-            delay_ms_7seg   0x0034a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-                init_uart   0x00352c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-            uart_delay_ms   0x00354a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-             uart_putchar   0x0035d2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-            uart_send_str   0x0035ee    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-           UartSendString   0x00362e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-            uart_power_of   0x00367a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-              UartSendNum   0x00375c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                 uart_isr   0x003992    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                  BCD2Dec   0x003996    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                  Dec2BCD   0x0039d4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 init_i2c   0x003a2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-           ds1307_control   0x003a42    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-           eeprom_control   0x003a60    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                i2c_start   0x003a7e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 i2c_stop   0x003a88    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                i2c_write   0x003a92    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                 i2c_read   0x003aae    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                  i2c_ack   0x003aba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-                  i2c_nak   0x003ac6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-             write_ds1307   0x003ad2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-             write_eeprom   0x003b3c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-              read_ds1307   0x003bca    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-              read_eeprom   0x003c40    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-          init_key_matrix   0x003cd6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-init_key_matrix_with_uart   0x003cde    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-scan_key_matrix_with_uart   0x003ce8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-            isButtonEnter   0x003e46    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-          isButtonESCHold   0x003e80    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-            isConformHold   0x003e90    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-         isButtonIncrease   0x003ea0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-         isButtonDecrease   0x003ee4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-          button_delay_ms   0x003f28    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-               setAllLeds   0x003fb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               offAllLeds   0x003fbe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                blinkLeds   0x003fd0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                blinkReds   0x003fe4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-             blinkYellows   0x003ffa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-              blinkGreens   0x004010    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  setRed1   0x004026    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               setYellow1   0x00403c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                setGreen1   0x004052    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  setRed2   0x004068    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               setYellow2   0x00407e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                setGreen2   0x004094    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-       write_8bit_traffic   0x0040aa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-      control_traffic_led   0x004178    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-         delay_ms_traffic   0x0041ac    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-              __string_39   0x004234    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_38   0x004257    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_37   0x004273    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_36   0x00428a    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_35   0x0042a1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_34   0x0042b7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_33   0x0042ba    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_32   0x0042c7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_31   0x0042db    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_30   0x0042fa    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_29   0x004308    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_28   0x004315    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_27   0x00431f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_26   0x00432e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_25   0x00433e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_24   0x004341    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_23   0x004350    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_22   0x00435e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_21   0x004366    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_20   0x004371    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_19   0x004378    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_18   0x004388    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_17   0x00438f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_16   0x00439e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_15   0x0043a5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_14   0x0043b4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_13   0x0043b6    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_12   0x0043bf    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_11   0x0043cc    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              __string_10   0x0043dd    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_9   0x0043ee    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_8   0x0043fb    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_7   0x004407    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_6   0x004418    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_5   0x004422    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_4   0x004432    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_3   0x00443f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_2   0x00444e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_1   0x00445e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               __string_0   0x00446d    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-           init_interrupt   0x00447a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-            init_ext_int0   0x004482    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                  low_isr   0x00448a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                 high_isr   0x004586    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-         SimulatedataSend   0x004752    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-                 FXD1616S   0x004754    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x004766    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x004776    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x004780    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x004784    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x004796    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD2424S   0x0047a0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  DA2424S   0x0047b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                   D2424S   0x0047ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                 D2424SOK   0x0047d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                D2424SNEG   0x0047d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                  D2424SX   0x0047f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
-                _do_cinit   0x0047fa    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x004814    program     static                          
-                copy_loop   0x00486c    program     static                          
-            copy_one_byte   0x004872    program     static                          
-             done_copying   0x004880    program     static                          
-       ___return_lbl00002   0x004896    program     static                          
-                     done   0x004896    program     static                          
-                 init_adc   0x004898    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-            get_adc_value   0x0048aa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
-                  FXM3232   0x004928    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
-       ___return_lbl00000   0x004996    program     static                          
-                 FXD3232U   0x004998    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                     loop   0x0049a6    program     static                          
-                   _false   0x0049da    program     static                          
-       ___return_lbl00000   0x0049de    program     static                          
-                 FXD2424U   0x0049e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
-                     loop   0x0049ec    program     static                          
-                   _false   0x004a14    program     static                          
-       ___return_lbl00000   0x004a18    program     static                          
-                 init_pwm   0x004a1a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
-             set_DC_speed   0x004a3c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
-                 FXD1616U   0x004a52    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x004a5c    program     static                          
-                  endloop   0x004a78    program     static                          
-       ___return_lbl00000   0x004a7c    program     static                          
-            __zero_memory   0x004a7e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-               zero_block   0x004a8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   loop_h   0x004a8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                compare_l   0x004a94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   loop_l   0x004a96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                 _startup   0x004a9e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x004aae    program     static                          
-       ___return_lbl00001   0x004ab8    program     static                          
-                 FXD0808U   0x004aba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
-                     loop   0x004ac2    program     static                          
-                  endloop   0x004ad0    program     static                          
-       ___return_lbl00000   0x004ad4    program     static                          
+               fsm_manual   0x0003ca    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               fsm_tuning   0x0007c2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                  menuRun   0x000ae0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __tmplbl_88   0x001342    program     static                          
+              __tmplbl_87   0x00142c    program     static                          
+              __tmplbl_86   0x00150c    program     static                          
+              __tmplbl_85   0x001696    program     static                          
+              __tmplbl_84   0x0017d4    program     static                          
+             __tmplbl_100   0x0018ba    program     static                          
+              __tmplbl_83   0x0018c2    program     static                          
+              __tmplbl_97   0x001916    program     static                          
+              __tmplbl_82   0x00191a    program     static                          
+              __tmplbl_81   0x0019ba    program     static                          
+              __tmplbl_80   0x001a56    program     static                          
+              __tmplbl_96   0x001b08    program     static                          
+              __tmplbl_98   0x001b08    program     static                          
+              __tmplbl_99   0x001b08    program     static                          
+             __tmplbl_107   0x001b08    program     static                          
+   UartDataReceiveProcess   0x001b0a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                lcd_delay   0x001df4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                 v_timer0   0x001e84    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_sendCommand   0x001f14    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                 lcd_init   0x001f94    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_read_status   0x0020a4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_wait_busy   0x00215a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_write_4bits   0x00217a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_write_cmd   0x0021c0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_write_data   0x0021fc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              lcd_putchar   0x00223a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_print_char   0x002254    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_print_str   0x00226e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           lcd_set_cursor   0x0022ae    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                lcd_clear   0x0022e8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+             lcd_power_of   0x0022fc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            lcd_print_num   0x0023de    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              LcdPrintNum   0x002614    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+           LcdPrintString   0x00265c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          lcd_print_charS   0x002690    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                LcdClearS   0x0026d6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+         DisplayLcdScreen   0x002734    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+        DisplayLcdScreen2   0x00282c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+      DisplayLcdScreenOld   0x0028b2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+            LcdPrintCharS   0x00291c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+             LcdPrintNumS   0x002990    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+          LcdPrintStringS   0x002bde    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+              init_timer0   0x002c34    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer0   0x002ce8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer0   0x002cec    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer1   0x002d78    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer1   0x002e32    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer1   0x002ebe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer2   0x002ec2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer2   0x002eee    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer2   0x002ef6    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              init_timer3   0x002efa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             start_timer3   0x002fb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              stop_timer3   0x00303c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer0_isr   0x003040    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer1_isr   0x00305c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer2_isr   0x003078    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer3_isr   0x003094    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer0_ms   0x0030b0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer1_ms   0x0030d4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer2_ms   0x003112    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             SetTimer3_ms   0x003150    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              write_8bit1   0x00318e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+              write_8bit2   0x00326a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             display_led1   0x003346    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             display_led2   0x003418    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             control_led1   0x0034ea    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+             control_led2   0x00353c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+            delay_ms_7seg   0x00358e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
+                init_uart   0x003616    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+            uart_delay_ms   0x003634    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+             uart_putchar   0x0036bc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+            uart_send_str   0x0036d8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+           UartSendString   0x003718    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+            uart_power_of   0x003764    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+              UartSendNum   0x003846    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+                 uart_isr   0x003a7c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
+                  BCD2Dec   0x003a80    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  Dec2BCD   0x003abe    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 init_i2c   0x003b14    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+           ds1307_control   0x003b2c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+           eeprom_control   0x003b4a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                i2c_start   0x003b68    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 i2c_stop   0x003b72    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                i2c_write   0x003b7c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                 i2c_read   0x003b98    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  i2c_ack   0x003ba4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  i2c_nak   0x003bb0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+             write_ds1307   0x003bbc    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+             write_eeprom   0x003c26    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+              read_ds1307   0x003cb4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+              read_eeprom   0x003d2a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+          init_key_matrix   0x003dc0    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+init_key_matrix_with_uart   0x003dc8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+scan_key_matrix_with_uart   0x003dd2    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+            isButtonEnter   0x003f30    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+          isButtonESCHold   0x003f6a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+            isConformHold   0x003f7a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+         isButtonIncrease   0x003f8a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+         isButtonDecrease   0x003fce    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+          button_delay_ms   0x004012    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+               setAllLeds   0x00409a    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               offAllLeds   0x0040a8    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                blinkLeds   0x0040ba    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                blinkReds   0x0040ce    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+             blinkYellows   0x0040e4    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+              blinkGreens   0x0040fa    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                  setRed1   0x004110    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               setYellow1   0x004126    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                setGreen1   0x00413c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                  setRed2   0x004152    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               setYellow2   0x004168    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+                setGreen2   0x00417e    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+       write_8bit_traffic   0x004194    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+      control_traffic_led   0x004262    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+         delay_ms_traffic   0x004296    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+              __string_39   0x00431e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_38   0x004341    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_37   0x00435d    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_36   0x004374    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_35   0x00438b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_34   0x0043a1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_33   0x0043a4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_32   0x0043b1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_31   0x0043c5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_30   0x0043e4    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_29   0x0043f2    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_28   0x0043ff    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_27   0x004409    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_26   0x004418    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_25   0x004428    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_24   0x00442b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_23   0x00443a    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_22   0x004448    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_21   0x004450    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_20   0x00445b    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_19   0x004462    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_18   0x004472    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_17   0x004479    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_16   0x004488    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_15   0x00448f    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_14   0x00449e    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_13   0x0044a0    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_12   0x0044a9    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_11   0x0044b6    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              __string_10   0x0044c7    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_9   0x0044d8    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_8   0x0044e5    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_7   0x0044f1    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_6   0x004502    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_5   0x00450c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_4   0x00451c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_3   0x004529    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_2   0x004538    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_1   0x004548    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               __string_0   0x004557    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           init_interrupt   0x004564    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+            init_ext_int0   0x00456c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                  low_isr   0x004574    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                 high_isr   0x004670    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+uart_isr_simulate_machine   0x004758    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+         SimulatedataSend   0x00483c    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+                 FXD1616S   0x00483e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x004850    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x004860    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00486a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00486e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x004880    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD2424S   0x00488a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  DA2424S   0x0048a0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                   D2424S   0x0048b4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                 D2424SOK   0x0048be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                D2424SNEG   0x0048c2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                  D2424SX   0x0048da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424s.asm
+                _do_cinit   0x0048e4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x0048fe    program     static                          
+                copy_loop   0x004956    program     static                          
+            copy_one_byte   0x00495c    program     static                          
+             done_copying   0x00496a    program     static                          
+       ___return_lbl00002   0x004980    program     static                          
+                     done   0x004980    program     static                          
+                 init_adc   0x004982    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+            get_adc_value   0x004994    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+                  FXM3232   0x004a12    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
+       ___return_lbl00000   0x004a80    program     static                          
+                 FXD3232U   0x004a82    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                     loop   0x004a90    program     static                          
+                   _false   0x004ac4    program     static                          
+       ___return_lbl00000   0x004ac8    program     static                          
+                 FXD2424U   0x004aca    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd2424u.c
+                     loop   0x004ad6    program     static                          
+                   _false   0x004afe    program     static                          
+       ___return_lbl00000   0x004b02    program     static                          
+                 init_pwm   0x004b04    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+             set_DC_speed   0x004b26    program     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+                 FXD1616U   0x004b3c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x004b46    program     static                          
+                  endloop   0x004b62    program     static                          
+       ___return_lbl00000   0x004b66    program     static                          
+            __zero_memory   0x004b68    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+               zero_block   0x004b76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   loop_h   0x004b76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                compare_l   0x004b7e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   loop_l   0x004b80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                 _startup   0x004b88    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x004b98    program     static                          
+       ___return_lbl00001   0x004ba2    program     static                          
+                 FXD0808U   0x004ba4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd0808u.c
+                     loop   0x004bac    program     static                          
+                  endloop   0x004bba    program     static                          
+       ___return_lbl00000   0x004bbe    program     static                          
                __config_0   0x300001    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                __config_1   0x300002    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                __config_2   0x300003    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
@@ -924,16 +931,16 @@ uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA
                __config_9   0x30000c    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
               __config_10   0x30000d    program     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-            __FPFLAGSbits   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
+            __FPFLAGSbits   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                   __REMB3   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB7   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB2   0x000003       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB6   0x000003       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB1   0x000004       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB5   0x000004       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
-                  __REMB0   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB4   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
+                  __REMB0   0x000005       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB3   0x000006       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB2   0x000007       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB1   0x000008       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
@@ -944,15 +951,15 @@ uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA
                  __BARGB1   0x00000d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\barg.asm
                  __BARGB0   0x00000e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\barg.asm
                    __BEXP   0x00000f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\barg.asm
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\led7seg\led7seg.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\uart\uart.c
-                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
                   __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\adc\adc.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
+                  __tmp_0   0x000010       data     static C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
                         i   0x000080       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
               dataReceive   0x000081       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
                  dataSend   0x0000b3       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
@@ -976,60 +983,69 @@ uart_isr_simulate_machine   0x00466e    program     extern C:\Hoc tap\DA TKLL\DA
         globalTimeOfGreen   0x00011d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
           globalTimeOfRed   0x00011e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
        globalTimeOfYellow   0x00011f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              timeCounter   0x000120       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-           trafficCounter   0x000121       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-               secCounter   0x000122       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-        secTrafficCounter   0x000123       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-           secMenuCounter   0x000124       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              waitCounter   0x000125       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-       tempTrafficCounter   0x000126       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              preTunState   0x000127       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                 prePress   0x000128       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-             uartPrePress   0x000129       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-            uartPrePress1   0x00012a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-              tunPrePress   0x00012b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
-                 key_code   0x00012c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-     arrayMaskOutputOfKey   0x00014c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-      arrayMaskInputOfKey   0x000150       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-              buttonDelay   0x000154       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
-             timer0_value   0x000155       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer1_value   0x000157       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer2_value   0x000159       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             timer3_value   0x00015b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer0   0x00015d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer1   0x00015e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer2   0x00015f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-              flag_timer3   0x000160       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                   v_cnt0   0x000161       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                   v_cnt1   0x000163       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer0_cnt   0x000165       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer1_cnt   0x000167       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer2_cnt   0x000169       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-               timer3_cnt   0x00016b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time0_MUL   0x00016d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time1_MUL   0x00016f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time2_MUL   0x000171       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-                time3_MUL   0x000173       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
-             statusSim900   0x000175       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-             WaitResponse   0x000176       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-            statusReceive   0x000177       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-           indexOfMachine   0x000179       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-       indexOfDataReceive   0x00017a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-          indexOfdataSend   0x00017b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-      numberOfDataReceive   0x00017c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-         numberOfDataSend   0x00017d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-             statusOfUart   0x00017e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-       timeChangedataSend   0x00017f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
-                     prom   0x000181       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                curr_byte   0x000184       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-               curr_entry   0x000186       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                 data_ptr   0x000188       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     cnt0   0x00018b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                     cnt1   0x00018d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
-                  ack_bit   0x00018f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
-               cur_status   0x000190       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
-               duty_cycle   0x000191       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
+    uartGlobalTimeOfGreen   0x000120       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+      uartGlobalTimeOfRed   0x000121       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+   uartGlobalTimeOfYellow   0x000122       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              timeCounter   0x000123       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           trafficCounter   0x000124       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               secCounter   0x000125       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+        secTrafficCounter   0x000126       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           secMenuCounter   0x000127       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              waitCounter   0x000128       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+       tempTrafficCounter   0x000129       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              preTunState   0x00012a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                 prePress   0x00012b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+             uartPrePress   0x00012c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+            uartPrePress1   0x00012d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              tunPrePress   0x00012e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                  redFlag   0x00012f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                greenFlag   0x000130       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+               yellowFlag   0x000131       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+              uartRedFlag   0x000132       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+            uartGreenFlag   0x000133       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+           uartYellowFlag   0x000134       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\main.c
+                 key_code   0x000135       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+     arrayMaskOutputOfKey   0x000155       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+      arrayMaskInputOfKey   0x000159       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+              buttonDelay   0x00015d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\button_matrix\button.c
+             timer0_value   0x00015e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer1_value   0x000160       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer2_value   0x000162       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             timer3_value   0x000164       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer0   0x000166       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer1   0x000167       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer2   0x000168       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+              flag_timer3   0x000169       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                   v_cnt0   0x00016a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                   v_cnt1   0x00016c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer0_cnt   0x00016e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer1_cnt   0x000170       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer2_cnt   0x000172       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+               timer3_cnt   0x000174       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time0_MUL   0x000176       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time1_MUL   0x000178       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time2_MUL   0x00017a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+                time3_MUL   0x00017c       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\timer\timer.c
+             statusSim900   0x00017e       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+             WaitResponse   0x00017f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+            statusReceive   0x000180       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+flagOfDataReceiveComplete   0x000181       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+           indexOfMachine   0x000182       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+       indexOfDataReceive   0x000183       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+          indexOfdataSend   0x000184       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+      numberOfDataReceive   0x000185       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+         numberOfDataSend   0x000186       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+             statusOfUart   0x000187       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+       timeChangedataSend   0x000188       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\simulate_machine\simulate_machine.c
+                     prom   0x00018a       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                curr_byte   0x00018d       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+               curr_entry   0x00018f       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                 data_ptr   0x000191       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     cnt0   0x000194       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                     cnt1   0x000196       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\interrupt\interrupt.c
+                  ack_bit   0x000198       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\i2c\i2c.c
+               cur_status   0x000199       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\traffic_led\traffic_led.c
+               duty_cycle   0x00019a       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
                  UserFont   0x000f00       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
                 statusLCD   0x000f40       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
                 LcdScreen   0x000f41       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
@@ -1037,70 +1053,70 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
               current_row   0x000f7b       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
               current_col   0x000f7d       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\lcd\lcd.c
                     speed   0x000f7f       data     extern C:\Hoc tap\DA TKLL\DA_TKLL\ProjectTKLL\pwm\pwm.c
-                PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     PORTA   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 PORTBbits   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     PORTC   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                    PORTD   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 PORTDbits   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                PORTEbits   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                    PORTD   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     PORTE   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                 LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                PORTEbits   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      LATA   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                 LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      LATB   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  LATBbits   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  LATCbits   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      LATC   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                     LATD   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  LATDbits   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                     LATE   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                     LATD   0x000f8c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  LATEbits   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                    TRISA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                     LATE   0x000f8d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      DDRA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                TRISAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  DDRAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                TRISAbits   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                    TRISA   0x000f92       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                    TRISB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      DDRB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  DDRBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 TRISBbits   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                    TRISB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  DDRCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                    TRISC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      DDRC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                    TRISC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 TRISCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                     DDRD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  DDRDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TRISD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 TRISDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                     DDRD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TRISE   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 TRISEbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  DDREbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      DDRE   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               OSCTUNEbits   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                   OSCTUNE   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  PIE1bits   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  PIR1bits   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      PIR1   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      IPR1   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  IPR1bits   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                 PIE2bits   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      PIE2   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                     PIR2   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                 PIE2bits   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  PIR2bits   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                 IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                     PIR2   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      IPR2   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-               EECON1bits   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                 IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    EECON1   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+               EECON1bits   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    EECON2   0x000fa7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    EEDATA   0x000fa8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     EEADR   0x000fa9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    EEADRH   0x000faa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                RCSTAbits   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     RCSTA   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                RCSTAbits   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TXSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                TXSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TXREG   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     RCREG   0x000fae       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     SPBRG   0x000faf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -1111,41 +1127,41 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
                     TMR3H   0x000fb3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                 CMCONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     CMCON   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   CVRCON   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                CVRCONbits   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  ECCP1AS   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   CVRCON   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               ECCP1ASbits   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  PWM1CON   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  ECCP1AS   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               PWM1CONbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  BAUDCON   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-              BAUDCONbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  BAUDCTL   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  PWM1CON   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               BAUDCTLbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  CCP2CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  BAUDCTL   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+              BAUDCONbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  BAUDCON   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               CCP2CONbits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  CCP2CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     CCPR2   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    CCPR2L   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    CCPR2H   0x000fbc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  CCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               CCP1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   CCPR1L   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  CCP1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     CCPR1   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   CCPR1L   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    CCPR1H   0x000fbf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                ADCON2bits   0x000fc0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADCON2   0x000fc0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                ADCON1bits   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     ADRES   0x000fc3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADRESL   0x000fc3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    ADRESH   0x000fc4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  SSPCON2   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               SSPCON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  SSPCON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  SSPCON2   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               SSPCON1bits   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  SSPSTAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  SSPCON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               SSPSTATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  SSPSTAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    SSPADD   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    SSPBUF   0x000fc9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     T2CON   0x000fca       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -1160,18 +1176,18 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
                  RCONbits   0x000fd0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                WDTCONbits   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    WDTCON   0x000fd1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-               LVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   LVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-              HLVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                   HLVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-               OSCCONbits   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+              HLVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   LVDCON   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+               LVDCONbits   0x000fd2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    OSCCON   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                T0CONbits   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+               OSCCONbits   0x000fd3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     T0CON   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                T0CONbits   0x000fd5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TMR0L   0x000fd6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     TMR0H   0x000fd7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   STATUS   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                STATUSbits   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   STATUS   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      FSR2   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     FSR2L   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     FSR2H   0x000fda       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -1189,8 +1205,8 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
                  POSTDEC1   0x000fe5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  POSTINC1   0x000fe6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     INDF1   0x000fe7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                        W   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                        W   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     FSR0L   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      FSR0   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     FSR0H   0x000fea       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -1199,10 +1215,10 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
                  POSTDEC0   0x000fed       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                  POSTINC0   0x000fee       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                     INDF0   0x000fef       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-              INTCON3bits   0x000ff0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                   INTCON3   0x000ff0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                  INTCON2   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+              INTCON3bits   0x000ff0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
               INTCON2bits   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                  INTCON2   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    INTCON   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                INTCONbits   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      PROD   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
@@ -1213,12 +1229,12 @@ flagOfDataReceiveComplete   0x000178       data     extern C:\Hoc tap\DA TKLL\DA
                    TBLPTR   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                   TBLPTRH   0x000ff7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                   TBLPTRU   0x000ff8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                       PCL   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    PCLATH   0x000ffa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                    PCLATU   0x000ffb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
-                   STKPTR   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                STKPTRbits   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
+                   STKPTR   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                       TOS   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      TOSL   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
                      TOSH   0x000ffe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f4620.asm
