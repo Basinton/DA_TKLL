@@ -39,17 +39,11 @@ void uart_isr_simulate_machine() {
         case INIT_RECEIVE:
             //            statusOfUart = 0;
         case WAIT_HEADER_1:
-            if (tempReceive == 0x21) {
+            if (tempReceive == '!') {
                 statusOfUart = 0;
                 indexOfDataReceive = 0;
-                statusReceive = WAIT_HEADER_2;
-            }
-            break;
-        case WAIT_HEADER_2:
-            if (tempReceive == 0x21)
                 statusReceive = RECEIVE_DATA;
-            else
-                statusReceive = WAIT_HEADER_1;
+            }
             break;
         case RECEIVE_DATA:
             dataReceive[indexOfDataReceive] = tempReceive;
@@ -58,30 +52,28 @@ void uart_isr_simulate_machine() {
                 statusReceive = END_OF_RECEIVE_1;
             break;
         case END_OF_RECEIVE_1:
-            if (tempReceive == 0x23)
+            if (tempReceive == '#')
                 statusReceive = END_OF_RECEIVE_2;
             else
                 statusReceive = WAIT_HEADER_1;
             break;
         case END_OF_RECEIVE_2:
-            if (tempReceive == 0x23) {
                 flagOfDataReceiveComplete = 1;
-                if (dataReceive[0] == 0x52) {
-                    statusOfUart = 52;
-                } else if (dataReceive[0] == 0x47) {
-                    statusOfUart = 47;
-                } else if (dataReceive[0] == 0x59) {
-                    statusOfUart = 59;
-                } else if (dataReceive[0] == 0x53) {
-                    statusOfUart = 81;
-                } else if (dataReceive[0] == 0x41) {
-                    statusOfUart = 82;
-                } else if (dataReceive[0] != 0x52 && dataReceive[0] != 0x47 && dataReceive[0] != 0x59) {
-                    statusOfUart = 201;
+                if (dataReceive[0] == 'S') {
+                    statusOfUart = 1;
                 }
+//                 else if (dataReceive[0] == 'H') {
+//                    statusOfUart = 2;
+//                } else if (dataReceive[0] == 'T') {
+//                    statusOfUart = 3;
+//                } else if (dataReceive[0] == 'F') {
+//                    statusOfUart = 4;
+//                } else if (dataReceive[0] == 'L') {
+//                    statusOfUart = 5;
+//                } else if (dataReceive[0] != 'S' && dataReceive[0] != 'H' && dataReceive[0] != 'T' && dataReceive[0] != 'F' && dataReceive[0] != 'L') {
+//                    statusOfUart = 6;
+//                }
                 statusReceive = INIT_RECEIVE;
-            } else
-                statusReceive = WAIT_HEADER_1;
             break;
         default:
             statusReceive = INIT_RECEIVE;

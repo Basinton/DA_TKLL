@@ -3,7 +3,6 @@
 
 #include <p18f4620.h>
 
-
 #define WRITE		0
 #define READ		1
 
